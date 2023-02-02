@@ -1,0 +1,140 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+
+<nav class="bg-gray-800">
+
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                <button id="menu-btn" type="button"
+                        class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+
+                    <svg class="h-6 w-6" style="display: block" id="bars3" xmlns="http://www.w3.org/2000/svg"
+                         fill="none" viewBox="0 0 24 24"
+                         stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+                    </svg>
+
+                    <svg class="h-6 w-6" style="display: none" id="xmarks" xmlns="http://www.w3.org/2000/svg"
+                         fill="none" viewBox="0 0 24 24"
+                         stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div class="flex flex-shrink-0 items-center">
+                                        <img class="block h-10 w-auto lg:hidden"
+                                             src="{% static 'logo.png' %}" alt="Your Company">
+                                        <img class="hidden h-10 w-auto lg:block"
+                                             src="{% static 'logo.png' %}" alt="Your Company">
+                </div>
+                <div class="hidden sm:ml-6 sm:block">
+                    <div class="flex space-x-4">
+                        <a href="home.html"
+                           class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                           aria-current="page">Home</a>
+
+                        <a href="teams.html"
+                           class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Teams</a>
+
+                        <a href="contestants.html"
+                           class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contestants</a>
+
+                        <a href="calender.html"
+                           class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 ">
+
+                <div class="flex items-center justify-center bg-gray hidden sm:ml-6 sm:block ">
+                    <form method="GET" class="m-0">
+                        <div class="relative text-gray-600 focus-within:text-gray-400">
+      <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+        <button type="submit" class=" focus:outline-none focus:shadow-outline">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+               viewBox="0 0 24 24" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </button>
+      </span>
+                            <input type="search" name="q"
+                                   class="py-2 text-sm text-white bg-gray-900 rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900"
+                                   placeholder="Search..." autocomplete="off">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div style="display: none" id="mobile-menu">
+
+        <div class="space-y-1 px-2 pt-2 pb-3">
+            <a href="home.html"
+               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+
+            <a href="teams.html"
+               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Teams</a>
+
+            <a href="contestants.html"
+               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contestants</a>
+
+            <a href="calender.html"
+               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+        </div>
+
+    </div>
+</nav>
+
+
+{% block content %}
+
+{% endblock %}
+
+<script>
+
+
+    $(document).ready(function () {
+        $("#menu-btn").click(function () {
+            $("#mobile-menu").toggle();
+            $("#bars3").toggle();
+            $("#xmarks").toggle();
+        });
+    });
+
+    $(window).resize(function () {
+        if ($(window).width() >= 200) {
+
+            if ($('#xmarks').css('display') === 'block') {
+                $("#bars3").toggle();
+                $("#xmarks").toggle();
+            }
+            $("#mobile-menu").hide();
+        }
+    });
+
+
+</script>
+
+
+</body>
+
+</html>
