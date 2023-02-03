@@ -14,13 +14,18 @@ class ATCODER:
             for tr in tab.find_all('tr'):
                 dic.setdefault(tr.find('th').text)
                 dic[tr.find('th').text] = tr.find('td').text.replace('\n', '')
-            self.contest_count=dic['Rated Matches ']
+            self.info={
+                'contest_count':dic['Rated Matches '],
+                'submission_count':'countless',
+                'rating':dic['Rating'],
+                'highest_rating':dic['Highest Rating'],
+                'contribution':'countless',
+                'rank':dic['Rank'],
+                'last_contest':dic['Last Competed']
+            }
             # self.ac_count=self.dom.xpath('/html/body/main/div/div/div/div/div/section[6]/div/h5[1]')[0].text
-            self.submission_count='undefined'
-            self.rating=dic['Rating']
-            self.highest_rating=dic['Highest Rating']
-            self.contribution='undefined'
-            self.rank=dic['Rank']
-            self.last_contest=dic['Last Competed']
+            self.status=True
         except:
-            pass
+            self.status=False
+
+

@@ -17,5 +17,6 @@ class LIGHTOJ:
             self.highest_rating='unrated'
             self.contribution=0
             self.last_solved=self.dom.xpath('//*[@id="pages-community"]/div[2]/div[2]/div/div[1]/div[2]/div/div/div[1]/span[2]/h4/span')[0].text
+            self.status=True
         except:
-            pass
+            self.status = False

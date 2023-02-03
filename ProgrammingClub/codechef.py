@@ -21,8 +21,6 @@ class CODECHEF:
             self.contribution='undefined'
             self.rank=self.dom.xpath('/html/body/main/div/div/div/div/div/section[1]/ul/li[1]/span/span[1]')[0].text
             # self.last_solved=html.fromstring(etree.tostring(self.soup)).xpath('/html/body/main/div/div/div/aside/div[4]/div/div/div[1]/table/tbody/tr[1]')
+            self.status=True
         except:
-            pass
-if __name__ == '__main__':
-    u=CODECHEF('matrix33')
-    # print(u.dom.)
+            self.status = False

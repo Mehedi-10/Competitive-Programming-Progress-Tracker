@@ -16,5 +16,6 @@ class TOPH:
             self.rating=self.dom.xpath('/html/body/div[1]/div/div/div[2]/div[2]/div[1]/a/div[2]/div')[0]
             self.contribution=self.dom.xpath('/html/body/div[1]/div/div/div[2]/div[2]/div[3]/a/div[2]/div')[0].text
             self.rank=self.dom.xpath('/html/body/div[1]/div/div/div[2]/div[3]/div[1]/a/div[2]/div/span/span')[0].text
+            self.status=True
         except:
-            pass
+            self.status=False

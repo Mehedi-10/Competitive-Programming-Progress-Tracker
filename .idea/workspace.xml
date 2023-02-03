@@ -4,7 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5b84af-18ca-4c2f-90e4-2be90cfb894a" name="Changes" comment="" />
+    <list default="true" id="7a5b84af-18ca-4c2f-90e4-2be90cfb894a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgrammingClub/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgrammingClub/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgrammingClub/get_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgrammingClub/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgrammingClub/migrations/0002_toph_lightoj_codeforces_codechef.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgrammingClub/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgrammingClub/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgrammingClub/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgrammingClub/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/atcoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/atcoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/codechef.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/codechef.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/codeforces.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/codeforces.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/get_date.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/get_date.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/get_info.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/lightoj.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/lightoj.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/scheduled_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/scheduled_task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/profileanalyser/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/templatetags/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/templatetags/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/templatetags/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/toph.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/toph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/profileanalyser/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/calender.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/calender.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,38 +50,49 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2L3dKmgg8NMIpDk1NEdqkRcaDS4" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/6th sem project/profileanalyser/static&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/6th sem project/profileanalyser/static",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\6th sem project\profileanalyser\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\6th sem project\profileanalyser\ProgrammingClub" />
       <recent name="D:\6th sem project\profileanalyser\profileanalyser\templatetags" />
       <recent name="D:\6th sem project\profileanalyser" />
       <recent name="D:\6th sem project\profileanalyser\profileanalyser" />
@@ -108,17 +146,32 @@
       <workItem from="1675343738684" duration="5433000" />
       <workItem from="1675352055515" duration="13936000" />
       <workItem from="1675367981726" duration="940000" />
-      <workItem from="1675368945293" duration="6087000" />
+      <workItem from="1675368945293" duration="6506000" />
+      <workItem from="1675394296775" duration="3965000" />
+      <workItem from="1675401040265" duration="3171000" />
     </task>
+    <task id="LOCAL-00001" summary="1st commit">
+      <created>1675375127621</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675375127621</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="1st commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="1st commit" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/profileanalyser$views.coverage" NAME="views Coverage Results" MODIFIED="1675364111856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profileanalyser" />
     <SUITE FILE_PATH="coverage/profileanalyser$codechef.coverage" NAME="codechef Coverage Results" MODIFIED="1675233197799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profileanalyser" />
-    <SUITE FILE_PATH="coverage/profileanalyser$atcoder.coverage" NAME="atcoder Coverage Results" MODIFIED="1675261844840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profileanalyser" />
+    <SUITE FILE_PATH="coverage/profileanalyser$atcoder.coverage" NAME="atcoder Coverage Results" MODIFIED="1675397337921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profileanalyser" />
     <SUITE FILE_PATH="coverage/profileanalyser$codeforces.coverage" NAME="codeforces Coverage Results" MODIFIED="1675250526654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profileanalyser" />
     <SUITE FILE_PATH="coverage/profileanalyser$scheduled_task.coverage" NAME="scheduled_task Coverage Results" MODIFIED="1675176222212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profileanalyser" />
     <SUITE FILE_PATH="coverage/profileanalyser$toph.coverage" NAME="toph Coverage Results" MODIFIED="1675148349761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profileanalyser" />

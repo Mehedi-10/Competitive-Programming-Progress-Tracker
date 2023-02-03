@@ -18,6 +18,7 @@ def calender(request):
     day_cnt=calendar.monthrange(now.year, now.month)[1]
     date=[i for i in range(1,int(day_cnt)+1)]
     contest_date=fun()
+
     return render(request,'calender.html',{'day':dis,'dat':date,'current_month':calendar.month_name[now.month]+' '+str(now.year),'contest':contest_date})
 
 def teams(request):
