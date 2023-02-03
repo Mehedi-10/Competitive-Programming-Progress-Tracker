@@ -1,5 +1,8 @@
+import time
+
 import requests
 from bs4 import BeautifulSoup
+import json
 
 class ATCODER:
 
@@ -11,6 +14,9 @@ class ATCODER:
             self.soup=BeautifulSoup(page.content,"html.parser")
             tab = self.soup.find('table', class_="dl-table mt-2")
             dic = {}
+            url="https://kenkoooo.com/atcoder/atcoder-api/v3/user/ac_rank?user="+handle
+            page=requests.get(url)
+            self.soup=json.loads(page.text)
             for tr in tab.find_all('tr'):
                 dic.setdefault(tr.find('th').text)
                 dic[tr.find('th').text] = tr.find('td').text.replace('\n', '')
@@ -21,11 +27,14 @@ class ATCODER:
                 'highest_rating':dic['Highest Rating'],
                 'contribution':'countless',
                 'rank':dic['Rank'],
-                'last_contest':dic['Last Competed']
+                'last_contest':dic['Last Competed'],
+                'solved':str(self.soup['count'])
             }
-            # self.ac_count=self.dom.xpath('/html/body/main/div/div/div/div/div/section[6]/div/h5[1]')[0].text
+            print('atcoder done')
             self.status=True
         except:
             self.status=False
+if __name__ == '__main__':
+    u=ATCODER('mehedi10')
 
 
