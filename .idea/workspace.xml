@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a5b84af-18ca-4c2f-90e4-2be90cfb894a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/replaced.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profileanalyser/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/profileanalyser/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +230,8 @@
       <workItem from="1675443068850" duration="5942000" />
       <workItem from="1675449075911" duration="10912000" />
       <workItem from="1675483624670" duration="17675000" />
-      <workItem from="1675501635045" duration="1501000" />
+      <workItem from="1675501635045" duration="2109000" />
+      <workItem from="1675509748733" duration="4510000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1675375127621</created>
@@ -260,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675501715033</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="requrements added">
+      <created>1675504905423</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675504905423</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +280,8 @@
     <MESSAGE value="2st commit" />
     <MESSAGE value="3rd commit" />
     <MESSAGE value="Project Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project Done" />
+    <MESSAGE value="requrements added" />
+    <option name="LAST_COMMIT_MESSAGE" value="requrements added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/profileanalyser$tests.coverage" NAME="tests Coverage Results" MODIFIED="1675416279954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
