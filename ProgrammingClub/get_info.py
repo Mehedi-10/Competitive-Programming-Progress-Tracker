@@ -33,7 +33,7 @@ def init_atcoder(ob:contestant):
                 cntstnt = ac(handle)
                 if cntstnt.status:
                     ob.info = cntstnt.info.__str__()
-                    ob.last_update_time = datetime.now()
+                    ob.last_update_time = datetime.now().__str__()
                     ob.save()
             ojdata['atcoder']=stodic(ob.info)
         except:
@@ -46,7 +46,7 @@ def init_atcoder(ob:contestant):
                 new_o = atcoder(
                     sid_id=ob.sid,
                     info=ojdata['atcoder'].__str__(),
-                    last_update_time=datetime.now()
+                    last_update_time=datetime.now().__str__()
                 )
                 new_o.save()
             time.sleep(take_rest)
@@ -62,7 +62,7 @@ def init_codeforces(ob:contestant):
                 cntstnt = cf(handle)
                 if cntstnt.status:
                     ob.info = cntstnt.info.__str__()
-                    ob.last_update_time = datetime.now()
+                    ob.last_update_time = datetime.now().__str__()
                     ob.save()
             ojdata['codeforces']=stodic(ob.info)
 
@@ -76,7 +76,7 @@ def init_codeforces(ob:contestant):
                 new_o = codeforces(
                     sid_id=ob.sid,
                     info=ojdata['codeforces'].__str__(),
-                    last_update_time=datetime.now()
+                    last_update_time=datetime.now().__str__()
                 )
                 new_o.save()
             time.sleep(take_rest)
@@ -93,7 +93,7 @@ def init_toph(ob:contestant):
                 print(cntstnt.status)
                 if cntstnt.status:
                     ob.info = cntstnt.info.__str__()
-                    ob.last_update_time = datetime.now()
+                    ob.last_update_time = datetime.now().__str__()
                     ob.save()
             ojdata['toph'] = stodic(ob.info)
         except:
@@ -106,7 +106,7 @@ def init_toph(ob:contestant):
                 new_o = toph(
                     sid_id=ob.sid,
                     info=ojdata['toph'].__str__(),
-                    last_update_time=datetime.now()
+                    last_update_time=datetime.now().__str__()
                 )
                 new_o.save()
             time.sleep(take_rest)
@@ -123,7 +123,7 @@ def init_lightoj(ob:contestant):
                 cntstnt = loj(handle)
                 if cntstnt.status:
                     ob.info = cntstnt.info.__str__()
-                    ob.last_update_time = datetime.now()
+                    ob.last_update_time = datetime.now().__str__()
                     ob.save()
             ojdata['lightoj'] = stodic(ob.info)
         except:
@@ -136,7 +136,7 @@ def init_lightoj(ob:contestant):
                 new_o = lightoj(
                     sid_id=ob.sid,
                     info=ojdata['lightoj'].__str__(),
-                    last_update_time=datetime.now()
+                    last_update_time=datetime.now().__str__()
                 )
                 new_o.save()
             time.sleep(take_rest)
@@ -153,7 +153,7 @@ def init_codechef(ob:contestant):
                 cntstnt = cc(handle)
                 if cntstnt.status:
                     ob.info = cntstnt.info.__str__()
-                    ob.last_update_time = datetime.now()
+                    ob.last_update_time = datetime.now().__str__()
                     ob.save()
             ojdata['codechef'] = stodic(ob.info)
         except:
@@ -166,7 +166,7 @@ def init_codechef(ob:contestant):
                 new_o = codechef(
                     sid_id=ob.sid,
                     info=ojdata['codechef'].__str__(),
-                    last_update_time=datetime.now()
+                    last_update_time=datetime.now().__str__()
                 )
                 new_o.save()
             time.sleep(take_rest)

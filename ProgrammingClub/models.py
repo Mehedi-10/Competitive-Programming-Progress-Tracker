@@ -11,23 +11,23 @@ class contestant(models.Model):
 class atcoder(models.Model):
     sid=models.ForeignKey(contestant,on_delete=models.CASCADE)
     info=models.CharField(max_length=10000,null=True,default=None, blank=True)
-    last_update_time=models.DateTimeField()
+    last_update_time=models.CharField(max_length=200,null=True,default=None, blank=True)
 class codeforces(models.Model):
     sid=models.ForeignKey(contestant,on_delete=models.CASCADE)
     info=models.CharField(max_length=10000,null=True,default=None, blank=True)
-    last_update_time=models.DateTimeField()
+    last_update_time=models.CharField(max_length=200,null=True,default=None, blank=True)
 class toph(models.Model):
     sid=models.ForeignKey(contestant,on_delete=models.CASCADE)
     info=models.CharField(max_length=10000,null=True,default=None, blank=True)
-    last_update_time=models.DateTimeField()
+    last_update_time=models.CharField(max_length=200,null=True,default=None, blank=True)
 class codechef(models.Model):
     sid=models.ForeignKey(contestant,on_delete=models.CASCADE)
     info=models.CharField(max_length=10000,null=True,default=None, blank=True)
-    last_update_time=models.DateTimeField()
+    last_update_time=models.CharField(max_length=200,null=True,default=None, blank=True)
 class lightoj(models.Model):
     sid=models.ForeignKey(contestant,on_delete=models.CASCADE)
     info=models.CharField(max_length=10000,null=True,default=None, blank=True)
-    last_update_time=models.DateTimeField()
+    last_update_time=models.CharField(max_length=200,null=True,default=None, blank=True)
 
 class teams(models.Model):
     member1=models.ForeignKey(contestant,on_delete=models.CASCADE,related_name='member1')
