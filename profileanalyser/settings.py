@@ -77,21 +77,19 @@ WSGI_APPLICATION = 'profileanalyser.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-#
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-import dj_database_url
 
 DATABASES = {
-    'default':
-        dj_database_url.parse(
-            'postgres://programmingclub_1_user:ukEhfHsoT8UAZy7OhbAlSkbwr62qHEBU@dpg-cff7nupa6gdma8it1vp0-a.oregon-postgres.render.com/programmingclub_1')
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# import dj_database_url
+# DATABASES = {
+#     'default':
+#     dj_database_url.parse('postgres://programmingclub_user:Hx9qbviH9S0qQyQ8PprAPcKm3XzEovZK@dpg-cff4gfo2i3mg6pf1a9o0-a.oregon-postgres.render.com/programmingclub')
+# }
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
