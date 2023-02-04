@@ -1,3 +1,2 @@
 from django.test import TestCase
-
-# Create your tests here.
+li=['Algebra','Data Structures','Graphs and Trees','Dynamic Programming','String Processing','Combinatorics','Geometry','Miscellaneous']

@@ -2,89 +2,99 @@
 {% block title %}{{ 'Calendar' }}{% endblock %}
 {% load filters %}
 {% block content %}
-    <body class="bg-gray-200">
-    <div class="container mx-auto mt-10">
-        <div class="wrapper bg-white rounded shadow w-full ">
-            <div class="header flex justify-between border-b p-2">
+    <div class="flex flex-wrap justify-center text-center mb-10 mt-10">
+        <div class="w-full lg:w-6/12 px-4">
+            <h1 class="text-gray-900 text-2xl font-bold mb-3">
+                Upcoming Contests In This Month
+            </h1>
+
+        </div>
+    </div>
+    <div class="bg-slate-200 p-2">
+
+        <div class="container mx-auto mt-1">
+            <div class="wrapper bg-white rounded shadow w-full ">
+                <div class="header flex justify-between border-b p-2">
         <span class="text-lg font-bold">
           {{ current_month }}
         </span>
-                <div class="buttons" style="display: none">
-                    <button class="p-1">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle"
-                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                  d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                            <path fill-rule="evenodd"
-                                  d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"/>
-                            <path fill-rule="evenodd"
-                                  d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z"/>
-                        </svg>
-                    </button>
-                    <button class="p-1">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-circle"
-                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                  d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                            <path fill-rule="evenodd"
-                                  d="M7.646 11.354a.5.5 0 0 1 0-.708L10.293 8 7.646 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"/>
-                            <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/>
-                        </svg>
-                    </button>
+                    <div class="buttons" style="display: none">
+                        <button class="p-1">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle"
+                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path fill-rule="evenodd"
+                                      d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"/>
+                                <path fill-rule="evenodd"
+                                      d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z"/>
+                            </svg>
+                        </button>
+                        <button class="p-1">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-circle"
+                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path fill-rule="evenodd"
+                                      d="M7.646 11.354a.5.5 0 0 1 0-.708L10.293 8 7.646 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"/>
+                                <path fill-rule="evenodd"
+                                      d="M4.5 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <table class="w-full">
-                <thead>
+                <table class="w-full">
+                    <thead>
 
-                <tr>
-                    {% for foo in day %}
-                        <th class="p-2 border-r h-10 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 xl:text-sm text-xs">
-                            <span class="xl:block lg:block md:block sm:block hidden">{{ foo }}</span>
-                            <span class="xl:hidden lg:hidden md:hidden sm:hidden block">{{ foo }}</span>
-                        </th>
-                    {% endfor %}
+                    <tr>
+                        {% for foo in day %}
+                            <th class="p-2 border-r h-10 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 xl:text-sm text-xs">
+                                <span class="xl:block lg:block md:block sm:block hidden">{{ foo }}</span>
+                                <span class="xl:hidden lg:hidden md:hidden sm:hidden block">{{ foo }}</span>
+                            </th>
+                        {% endfor %}
 
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="text-center h-20">
-                    {% for i in dat %}
-                        <td class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
-                            <div class="flex flex-col h-40 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
-                                <div class="top h-5 w-full">
-                                    <span class="text-gray-500">{{ i }}</span>
-                                </div>
-                                    <div class=" bottom flex-grow h-10 py-1 w-full cursor-pointer" >
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="text-center h-20">
+                        {% for i in dat %}
+                            <td class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                <div class="flex flex-col h-40 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                    <div class="top h-5 w-full">
+                                        <span class="text-gray-500">{{ i }}</span>
+                                    </div>
+                                    <div class=" bottom flex-grow h-10 py-1 w-full cursor-pointer">
 
-                                {% if i in contest %}
-                                    {% for j in contest|get_item:i %}
-                                        <div class="event bg-purple-400 text-white rounded p-1 mb-1" style="font-size: 7.5px">
-                                            <a href="{{ j.link }}">
-                                                <span class="event-name">{{ j.event }}</span>
-                                                <span class="time">{{ j.start }} ~ {{ j.duration }}</span>
-                                            </a>
-                                        </div>
-                                    {% endfor %}
+                                        {% if i in contest %}
+                                            {% for j in contest|get_item:i %}
+                                                <div class="event bg-purple-400 text-white rounded p-1 mb-1"
+                                                     style="font-size: 7.5px">
+                                                    <a href="{{ j.link }}">
+                                                        <span class="event-name">{{ j.event }}</span>
+                                                        <span class="time">{{ j.start }} ~ {{ j.duration }}</span>
+                                                    </a>
+                                                </div>
+                                            {% endfor %}
 
-                                {% endif %}
+                                        {% endif %}
                                     </div>
 
 
-                            </div>
-                        </td>
+                                </div>
+                            </td>
 
-                        {% if i|divisibleby:7 %}
-                            </tr>
-                            <tr class="text-center h-20">
-                        {% endif %}
-                    {% endfor %}
+                            {% if i|divisibleby:7 %}
+                                </tr>
+                                <tr class="text-center h-20">
+                            {% endif %}
+                        {% endfor %}
 
-                    </tr>
+                        </tr>
 
-
-                <!--         line 4 -->
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 {% endblock %}
