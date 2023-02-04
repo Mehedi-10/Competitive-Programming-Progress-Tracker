@@ -20,7 +20,7 @@ def time_delta(s):
     t22 = t2[0:19].replace('-', '/')
     delta = datetime.strptime(t22, '%Y/%m/%d %H:%M:%S') - datetime.strptime(t11, '%Y/%m/%d %H:%M:%S')
 
-    return delta.total_seconds()<86400
+    return delta.total_seconds()<(86400//2)
 
         #86400
 def init_atcoder(ob:contestant):

@@ -6,7 +6,6 @@ from .models import teams as team_model
 from .get_date import fun
 from .get_info import get_info
 
-
 def home(request):
     return render(request,'home.html')
 
@@ -39,4 +38,3 @@ def teams(request):
     }
     print(team_data)
     return render(request,'teams.html',{'all_data':all_data})
-
