@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-n5f1p1)wxq-uzl6+=yy3_4*@r49(+2hygixttv-6jlfwriw$1r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['https://programmingclub.onrender.com/']
+ALLOWED_HOSTS = ['programmingclub.onrender.com']
 
 # RENDER_EXTERNAL_HOSTNAME=os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 # if RENDER_EXTERNAL_HOSTNAME:    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
