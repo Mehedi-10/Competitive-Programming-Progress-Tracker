@@ -4,18 +4,33 @@
 {% load filters %}
 {% block content %}
 
-    <div class="p-7">
-        <h1 class="text-center text-2xl font-bold text-gray-800">All Contestants</h1>
+
+
+    <div class="flex flex-wrap justify-center text-center mb-10 mt-10">
+        <div class="w-full lg:w-6/12 px-4">
+            <h1 class="text-gray-900 text-4xl font-bold mb-8">
+                Meet Our Contestants
+            </h1>
+
+            <p class="text-gray-700 text-lg font-light">
+                                With over 10 years of cp journey, we've got many skilled contestants.
+            </p>
+        </div>
     </div>
     {% for key,val in contestant.items %}
 
-        <section class="antialiased bg-gray-100 text-gray-600 h-screen w-full px-4" style="display: none; z-index: 9999" id="section{{ key }}">
+        <section
+                class="antialiased bg-gray-100 text-gray-600 h-screen w-full px-4 bg-gray-900 bg-opacity-80 top-0 fixed sticky-0"
+                style="display: none; z-index: 9999"
+                id="section{{ key }}">
+
             <div class="flex flex-col justify-center h-full">
                 <div class="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
                     <header class="px-5 py-4 border-b border-gray-100 flow-root">
                         <h2 class="font-semibold text-gray-800 float-left">
                             {{ key|get_name }}</h2>
-                        <button type="button" class="float-right">
+                        <button type="button"
+                                class="float-right focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
                             <svg id="hide{{ key }}" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg"
                                  fill="none" viewBox="0 0 24 24"
                                  stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -81,7 +96,7 @@
                         class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
                     <a href="#">
                         <div class="relative flex items-end overflow-hidden rounded-xl">
-                            <img src="{% static 'vecteezy_programmer.jpg' %}" alt="Hotel Photo"/>
+                            <img height="300px" width="300px" src="{% static pic|random %}" alt="Contesent"  />
                             <div class="flex items-center space-x-1.5 rounded-lg bg-blue-500 px-4 py-1.5 text-white duration-100 hover:bg-blue-600">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      stroke-width="1.5"
@@ -116,8 +131,8 @@
             {% endfor %}
 
         </div>
-    </section>
 
+    </section>
 
 {% endblock %}
 

@@ -42,7 +42,7 @@ def init_atcoder(ob:contestant):
                 time.sleep(5)
             else:
                 ojdata.setdefault('atcoder')
-                ojdata['atcoder'] = cntstnt.info.__str__()
+                ojdata['atcoder'] = stodic(cntstnt.info.__str__())
                 new_o = atcoder(
                     sid_id=ob.sid,
                     info=ojdata['atcoder'].__str__(),
@@ -72,7 +72,7 @@ def init_codeforces(ob:contestant):
                 time.sleep(5)
             else:
                 ojdata.setdefault('codeforces')
-                ojdata['codeforces'] = cntstnt.info.__str__()
+                ojdata['codeforces'] = str(cntstnt.info.__str__())
                 new_o = codeforces(
                     sid_id=ob.sid,
                     info=ojdata['codeforces'].__str__(),
@@ -102,7 +102,7 @@ def init_toph(ob:contestant):
                 time.sleep(5)
             else:
                 ojdata.setdefault('toph')
-                ojdata['toph'] = cntstnt.info.__str__()
+                ojdata['toph'] = stodic(cntstnt.info.__str__())
                 new_o = toph(
                     sid_id=ob.sid,
                     info=ojdata['toph'].__str__(),
@@ -132,7 +132,7 @@ def init_lightoj(ob:contestant):
                 time.sleep(5)
             else:
                 ojdata.setdefault('lightoj')
-                ojdata['lightoj'] = cntstnt.info.__str__()
+                ojdata['lightoj'] = stodic(cntstnt.info.__str__())
                 new_o = lightoj(
                     sid_id=ob.sid,
                     info=ojdata['lightoj'].__str__(),
@@ -162,7 +162,7 @@ def init_codechef(ob:contestant):
                 time.sleep(5)
             else:
                 ojdata.setdefault('codechef')
-                ojdata['codechef'] = cntstnt.info.__str__()
+                ojdata['codechef'] = stodic(cntstnt.info.__str__())
                 new_o = codechef(
                     sid_id=ob.sid,
                     info=ojdata['codechef'].__str__(),

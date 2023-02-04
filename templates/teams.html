@@ -1,10 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'index.html' %}
+{% block title %}{{ 'Teams' }}{% endblock %}
+{% load static %}
+{% load filters %}
+{% block content %}
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css">
 
-</body>
-</html>
+    <!-- Page Container -->
+    <div class="flex items-center justify-center min-h-screen bg-white py-4">
+        <div class="flex flex-col">
+
+            <div class="flex flex-col mt-8">
+                <div class="container max-w-7xl px-4">
+                    <div class="flex flex-wrap justify-center text-center mb-10">
+                        <div class="w-full lg:w-6/12 px-4">
+                            <h1 class="text-gray-900 text-4xl font-bold mb-8">
+                                Meet Our Teams
+                            </h1>
+                            <p class="text-gray-700 text-lg font-light">
+                                With over 10 years of cp journey, we've got many well-seasoned team.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-100 p-7">
+                        {% for key,team in all_data.team.items %}
+
+                            <div class="flex flex-wrap p-4">
+                                {% for member in team.members %}
+                                    <div class="w-full md:w-2/6 lg:w-2/6 mb-6 px-6 sm:px-6 lg:px-3">
+                                        <div class="flex flex-col">
+                                            <div style="height: 300px; width: 300px">
+                                                <a href="#" class="mx-auto">
+                                                    <img class="rounded-2xl drop-shadow-sm hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                                         src="{% static all_data.img|random %} ">
+                                                </a>
+                                            </div>
+
+                                            <div class="text-center mt-6">
+                                                <h1 class="text-gray-900 text-xl font-bold mb-1">
+                                                    {{ member|get_name }}
+                                                </h1>
+
+                                                <div class="text-gray-700 mb-2">
+                                                    {% for exp in member|get_expertise %}
+                                                        <p class="text-xs inline-flex items-center font-bold leading-xs uppercase px-3 py-1 rounded-full bg-white text-gray-700 border"> {{ exp }}  </p>
+                                                    {% endfor %}
+                                                </div>
+
+                                                <div class="flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300">
+                                                    <a href="{{ member|cflink }}"
+                                                       class="flex rounded-full hover:bg-indigo-100 h-10 w-10">
+                                                        <i class="text-indigo-500 mx-auto mt-2"><img
+                                                                src="{% static 'code-forces-color.png' %}"
+                                                                class="w-6 h-6"></i>
+                                                    </a>
+
+                                                    <a href="{{ member|cclink }}"
+                                                       class="flex rounded-full hover:bg-blue-100 h-10 w-10">
+                                                        <i class="text-blue-300 mx-auto mt-2"><img
+                                                                src="{% static 'icons8-codechef-240.png' %}"
+                                                                class="w-6 h-6"></i>
+                                                    </a>
+
+                                                    <a href="{{ member|tophlink }}"
+                                                       class="flex rounded-full hover:bg-sky-100 h-10 w-10">
+                                                        <i class="text-orange-400 mx-auto mt-2"><img
+                                                                src="{% static 'rsz_toph.png' %}"
+                                                                class="w-6 h-6"></i>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="text-2xl text-center	 font-semibold"> {{ team.name }}</div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+

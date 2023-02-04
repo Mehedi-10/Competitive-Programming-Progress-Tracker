@@ -5,25 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a5b84af-18ca-4c2f-90e4-2be90cfb894a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ProgrammingClub/migrations/0003_alter_atcoder_last_update_time_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgrammingClub/migrations/0004_alter_atcoder_info_alter_codechef_info_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgrammingClub/migrations/0005_contestant_sname.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgrammingClub/migrations/0006_alter_contestant_sname.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/vecteezy_programmer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Studying.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/code-forces-color.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/code-forces.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icons8-codechef-240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/rsz_toph.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/vecteezy_champ.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/atcoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/atcoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/codechef.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/codechef.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/codeforces.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/codeforces.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgrammingClub/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgrammingClub/get_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/get_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/lightoj.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/lightoj.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgrammingClub/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgrammingClub/templatetags/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/templatetags/filters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgrammingClub/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/toph.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/toph.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgrammingClub/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/all_in_one_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/calender.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/calender.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/contestants.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contestants.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teams.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teams.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +50,106 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GotoFileConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="Directory" />
+      <filtered-out-file-type name="ActionScript" />
+      <filtered-out-file-type name="Angular2Html" />
+      <filtered-out-file-type name="Angular2Svg" />
+      <filtered-out-file-type name="AspectJ" />
+      <filtered-out-file-type name="AUTO_DETECTED" />
+      <filtered-out-file-type name="C#" />
+      <filtered-out-file-type name="C++" />
+      <filtered-out-file-type name="Chameleon" />
+      <filtered-out-file-type name="Cookie storage file" />
+      <filtered-out-file-type name="CSS" />
+      <filtered-out-file-type name="Csv(downloaded)" />
+      <filtered-out-file-type name="CSV/TSV" />
+      <filtered-out-file-type name="Cucumber" />
+      <filtered-out-file-type name="Cython" />
+      <filtered-out-file-type name="Dictionary" />
+      <filtered-out-file-type name="Dockerfile" />
+      <filtered-out-file-type name="DockerIgnore file" />
+      <filtered-out-file-type name="DTD" />
+      <filtered-out-file-type name="ECMAScript 6" />
+      <filtered-out-file-type name="EditorConfig" />
+      <filtered-out-file-type name="Flow" />
+      <filtered-out-file-type name="GitExclude file" />
+      <filtered-out-file-type name="GitIgnore file" />
+      <filtered-out-file-type name="Haskell" />
+      <filtered-out-file-type name="HgIgnore file" />
+      <filtered-out-file-type name="HTTP Request" />
+      <filtered-out-file-type name="IDEA_MODULE" />
+      <filtered-out-file-type name="IDEA_PROJECT" />
+      <filtered-out-file-type name="IDEA_WORKSPACE" />
+      <filtered-out-file-type name="IDL" />
+      <filtered-out-file-type name="IgnoreLang file" />
+      <filtered-out-file-type name="Ini" />
+      <filtered-out-file-type name="IntegrationPerformanceTest" />
+      <filtered-out-file-type name="JavaFX" />
+      <filtered-out-file-type name="JavaScript" />
+      <filtered-out-file-type name="JavaScript Testing Snapshot" />
+      <filtered-out-file-type name="Jinja2" />
+      <filtered-out-file-type name="JQL" />
+      <filtered-out-file-type name="JSHint" />
+      <filtered-out-file-type name="JSON" />
+      <filtered-out-file-type name="JSON-lines" />
+      <filtered-out-file-type name="JSON5" />
+      <filtered-out-file-type name="JSP" />
+      <filtered-out-file-type name="JSX Harmony" />
+      <filtered-out-file-type name="Jupyter" />
+      <filtered-out-file-type name="Less" />
+      <filtered-out-file-type name="Locale" />
+      <filtered-out-file-type name="Markdown" />
+      <filtered-out-file-type name="PATCH" />
+      <filtered-out-file-type name="Perl" />
+      <filtered-out-file-type name="PHP" />
+      <filtered-out-file-type name="PLAIN_TEXT" />
+      <filtered-out-file-type name="PowerShell" />
+      <filtered-out-file-type name="Properties" />
+      <filtered-out-file-type name="Puppet" />
+      <filtered-out-file-type name="Python" />
+      <filtered-out-file-type name="PythonStub" />
+      <filtered-out-file-type name="Qt UI file" />
+      <filtered-out-file-type name="RegExp" />
+      <filtered-out-file-type name="requirements.txt" />
+      <filtered-out-file-type name="ReST" />
+      <filtered-out-file-type name="RNG Compact" />
+      <filtered-out-file-type name="Sass" />
+      <filtered-out-file-type name="SCSS" />
+      <filtered-out-file-type name="Shell Script" />
+      <filtered-out-file-type name="SourceMap" />
+      <filtered-out-file-type name="SQL" />
+      <filtered-out-file-type name="SVG" />
+      <filtered-out-file-type name="textmate" />
+      <filtered-out-file-type name="TOML" />
+      <filtered-out-file-type name="tsconfig" />
+      <filtered-out-file-type name="Tsv(downloaded)" />
+      <filtered-out-file-type name="TypeScript" />
+      <filtered-out-file-type name="TypeScript JSX" />
+      <filtered-out-file-type name="Vue.js" />
+      <filtered-out-file-type name="XHTML" />
+      <filtered-out-file-type name="XML" />
+      <filtered-out-file-type name="YAML" />
+      <filtered-out-file-type name="yarn.lock" />
+      <filtered-out-file-type name="Zeppelin" />
+      <filtered-out-file-type name="Angular Metadata JSON" />
+      <filtered-out-file-type name="ARCHIVE" />
+      <filtered-out-file-type name="Avro" />
+      <filtered-out-file-type name="CVP" />
+      <filtered-out-file-type name="Database Element" />
+      <filtered-out-file-type name="DATASOURCE_STORAGE" />
+      <filtered-out-file-type name="H2 Database" />
+      <filtered-out-file-type name="Image" />
+      <filtered-out-file-type name="Native" />
+      <filtered-out-file-type name="Orc" />
+      <filtered-out-file-type name="Parquet" />
+      <filtered-out-file-type name="ResourceBundle" />
+      <filtered-out-file-type name="SQLite Database" />
+      <filtered-out-file-type name="UML" />
+      <filtered-out-file-type name="UNKNOWN" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -145,7 +245,8 @@
       <workItem from="1675411072437" duration="17563000" />
       <workItem from="1675430019222" duration="4798000" />
       <workItem from="1675443068850" duration="5942000" />
-      <workItem from="1675449075911" duration="10618000" />
+      <workItem from="1675449075911" duration="10912000" />
+      <workItem from="1675483624670" duration="17675000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1675375127621</created>
@@ -161,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675405381907</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="3rd commit">
+      <created>1675460201536</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675460201536</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +279,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="1st commit" />
     <MESSAGE value="2st commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="2st commit" />
+    <MESSAGE value="3rd commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="3rd commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/profileanalyser$tests.coverage" NAME="tests Coverage Results" MODIFIED="1675416279954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />

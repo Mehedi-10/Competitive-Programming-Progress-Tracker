@@ -28,3 +28,10 @@ class lightoj(models.Model):
     sid=models.ForeignKey(contestant,on_delete=models.CASCADE)
     info=models.CharField(max_length=10000,null=True,default=None, blank=True)
     last_update_time=models.DateTimeField()
+
+class teams(models.Model):
+    member1=models.ForeignKey(contestant,on_delete=models.CASCADE,related_name='member1')
+    member2=models.ForeignKey(contestant,on_delete=models.CASCADE,related_name='member2')
+    member3=models.ForeignKey(contestant,on_delete=models.CASCADE,related_name='member3')
+    team_name=models.CharField(max_length=100,null=True,default=None, blank=True)
+
