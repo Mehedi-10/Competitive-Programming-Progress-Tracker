@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-n5f1p1)wxq-uzl6+=yy3_4*@r49(+2hygixttv-6jlfwriw$1r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['programmingclub.onrender.com','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # RENDER_EXTERNAL_HOSTNAME=os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 # if RENDER_EXTERNAL_HOSTNAME:    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
@@ -124,8 +124,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT= BASE_DIR / 'static'
+STATICFILES_DIRS = [BASE_DIR / "static"]
+# STATIC_ROOT= BASE_DIR / 'static'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -138,7 +138,8 @@ STATIC_ROOT= BASE_DIR / 'static'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     # Turn on WhiteNoise storage backend that takes care of compressing static files
     # and creating unique names for each version so they can safely be cached forever.
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # MEDIA_URL = '/abcd/'
 # MEDIA_ROOT = BASE_DIR

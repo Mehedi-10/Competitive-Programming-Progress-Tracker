@@ -5,9 +5,14 @@ from .models import contestant as cnts_model
 from .models import teams as team_model
 from .get_date import fun
 from .get_info import get_info
+from .national_contests import synapse
 
 def home(request):
-    return render(request,'home.html')
+    all_data={
+        'ranklist':synapse(),
+    }
+    print(all_data['ranklist'])
+    return render(request,'home.html',{'all_data':all_data})
 
 def contestant(request):
     all_contestant={}

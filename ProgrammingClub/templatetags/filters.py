@@ -2,6 +2,7 @@ from django import template
 from ..models import contestant
 register = template.Library()
 import random
+import streamlit as stt
 
 @register.filter
 def get_item(dictionary, key):
@@ -48,4 +49,9 @@ def cflink(key):
 @register.filter()
 def cclink(key):
     return "https://www.codechef.com/users/"+contestant.objects.get(sid=key).cc_handle
+
+@register.filter()
+def st(key):
+    return 'kjhkjh'
+
 
