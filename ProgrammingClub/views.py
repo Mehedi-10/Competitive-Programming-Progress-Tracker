@@ -1,18 +1,23 @@
+import random
+
 from django.shortcuts import render
 import calendar
 import datetime
 from .models import contestant as cnts_model
 from .models import teams as team_model
 from .get_date import fun
-from .get_info import get_info
+from .get_info import get_info,get_rating
 from .national_contests import synapse
 
 def home(request):
-    all_data={
-        'ranklist':synapse(),
+
+    all={
+        'dept':get_rating()[0],
+        'university':get_rating()[1]
+        # 'contestant_count':get_uni_data(),
     }
-    print(all_data['ranklist'])
-    return render(request,'home.html',{'all_data':all_data})
+    # print(get_rating())
+    return render(request,'home.html',{'all_data':all})
 
 def contestant(request):
     all_contestant={}
@@ -20,8 +25,11 @@ def contestant(request):
     for i in cnts_model.objects.all():
         tmp={i.sid:get_info(i.sid)}
         all_contestant.update(tmp)
-    print(all_contestant)
-    return render(request,'contestants.html',{'contestant':all_contestant,'pic':li})
+    data=get_rating()[0]
+    sort_data=[]
+    for i in data:
+        sort_data.append((i[0],i[1]))
+    return render(request,'contestants.html',{'contestant':all_contestant,'pic':li,'sorted_list':sort_data})
 
 def calender(request):
     dis=['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
@@ -41,5 +49,4 @@ def teams(request):
         'img': li,
         'team':team_data
     }
-    print(team_data)
     return render(request,'teams.html',{'all_data':all_data})

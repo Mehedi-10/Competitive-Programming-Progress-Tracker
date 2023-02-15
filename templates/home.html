@@ -1,84 +1,297 @@
 {% extends 'index.html' %}
 {% block title %}{{ 'Home' }}{% endblock %}
 {% load filters %}
-
+{% load static %}
 {% block content %}
-    {{ all_data.ranklist|safe }}
-
-    <!-- component -->
 
 
-<section class="py-1 bg-blueGray-50">
-<div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
-  <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
-    <div class="rounded-t mb-0 px-4 py-3 border-0">
-      <div class="flex flex-wrap items-center">
-        <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-          <h3 class="font-semibold text-base text-blueGray-700">National Rank-list</h3>
+    <div class="flex  antialiased text-gray-900 p-10">
+
+
+        <div class="flex-1  overflow-x-hidden overflow-y-auto">
+
+            <div class="flex items-center justify-between px-4 py-4 border-b lg:py-6 dark:border-primary-darker">
+            </div>
+
+            <div class="mt-2">
+                <div class="grid grid-cols-1 gap-8 p-4 lg:grid-cols-2 xl:grid-cols-4">
+
+                    <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+                        <div>
+                            <h6
+                                    class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light"
+                            >
+                                Total Contestant
+                            </h6>
+                            <span class="text-xl font-semibold">{{ contestant.0 }}</span>
+                            <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
+                      {{ contestant.1|percentage }}
+                    </span>
+                        </div>
+                        <div>
+                    <span>
+                                          <img height="54px" width="54px" src="{% static 'ninja.png' %}">
+
+                    </span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+                        <div>
+                            <h6 class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
+                                Upcoming Contest
+                            </h6>
+                            <span class="text-xl font-semibold">{{ upcoming.0 }}</span>
+                            <span class="inline-block px-2 py-px ml-2 text-xs text-red-500 bg-red-100 rounded-md">
+                      {{ upcoming.1 }}
+                    </span>
+                        </div>
+                        <div>
+                    <span>
+                        <img height="54px" width="54px" src="{% static 'upcoming.png' %}">
+                    </span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+                        <div>
+                            <h6
+                                    class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light"
+                            >
+                                Last Contest University Rank
+                            </h6>
+                            <span class="text-xl font-semibold">{{ last_uni_rank.0 }}</span>
+{#                            <span class="inline-block px-2 py-px ml-2 text-xs {{ last_uni_rank.2|card_class }} rounded-md">#}
+                      {{ last_uni_rank.1 }}
+                    </span>
+                        </div>
+                        <div>
+                    <span>
+                        <img height="54px" width="54px" src="{% static 'top-rated.png' %}">
+                    </span>
+                        </div>
+                    </div>
+
+                    <!-- Tickets card -->
+                    <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+                        <div>
+                            <h6 class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
+                                University Rank
+                            </h6>
+                            <span class="text-xl font-semibold">{{ uni_rank.0 }}</span>
+                            <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
+                      {{ uni_rank.1 }}
+                    </span>
+                        </div>
+                        <div>
+                    <span>
+                        <img height="54px" width="54px" src="{% static 'ranking.png' %}">
+                    </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="grid grid-cols-2 p-4 space-y-8 lg:gap-8 lg:space-y-0 lg:grid-cols-2">
+                    <div class="col-span-1 bg-white rounded-md dark:bg-darker">
+                        <div class="flex items-center justify-between p-4 border-b dark:border-primary">
+                            <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Department
+                                Rank-list</h4>
+                            {#                            <div class="flex items-center">#}
+                            {#                                <button#}
+                            {#                                        class="relative focus:outline-none"#}
+                            {#                                        x-cloak#}
+                            {#                                        @click="isOn = !isOn; $parent.updateDoughnutChart(isOn)"#}
+                            {#                                >#}
+                            {#                                    <div#}
+                            {#                                            class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-primary-darker"#}
+                            {#                                    ></div>#}
+                            {#                                    <div#}
+                            {#                                            class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 ease-in-out transform scale-110 rounded-full shadow-sm"#}
+                            {#                                            :class="{ 'translate-x-0  bg-white dark:bg-primary-100': !isOn, 'translate-x-6 bg-primary-light dark:bg-primary': isOn }"#}
+                            {#                                    ></div>#}
+                            {#                                </button>#}
+                            {#                            </div>#}
+                        </div>
+                        <!-- Chart -->
+                        <div class="relative p-4 h-72">
+
+                            <div class="block w-full overflow-x-auto">
+                                <table class="items-center bg-transparent w-full border-collapse ">
+                                    <thead>
+                                    <tr>
+                                        <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                            Name
+                                        </th>
+                                        <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                            Rating
+                                        </th>
+                                        <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                            Rating Change
+                                        </th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    {% for i in all_data.dept %}
+                                        <tr>
+                                            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                                                {{ i.0|get_name }}
+                                            </th>
+                                            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                                {{ i.1 }}
+                                            </td>
+                                            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                                <i class="fas {{ i.2|get_class }} mr-4"></i>
+                                                {{ i.2|rating_delta }}
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-span-1 bg-white rounded-md dark:bg-darker">
+                        <!-- Card header -->
+                        <div class="flex items-center justify-between p-4 border-b dark:border-primary">
+                            <h4 class="text-lg font-semibold text-gray-500 dark:text-light">University Rank-list</h4>
+                            {#                            <div class="flex items-center space-x-2">#}
+                            {#                                <span class="text-sm text-gray-500 dark:text-light">Last year</span>#}
+                            {#                                <button#}
+                            {#                                        class="relative focus:outline-none"#}
+                            {#                                        x-cloak#}
+                            {#                                        @click="isOn = !isOn; $parent.updateBarChart(isOn)"#}
+                            {#                                >#}
+                            {#                                    <div#}
+                            {#                                            class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-primary-darker"#}
+                            {#                                    ></div>#}
+                            {#                                    <div#}
+                            {#                                            class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 ease-in-out transform scale-110 rounded-full shadow-sm"#}
+                            {#                                            :class="{ 'translate-x-0  bg-white dark:bg-primary-100': !isOn, 'translate-x-6 bg-primary-light dark:bg-primary': isOn }"#}
+                            {#                                    ></div>#}
+                            {#                                </button>#}
+                            {#                            </div>#}
+                        </div>
+                        <!-- Chart -->
+                        <div class="relative p-4 h-72">
+
+
+                            <div class="block w-full overflow-x-auto">
+                                <table class="items-center bg-transparent w-full border-collapse ">
+                                    <thead>
+                                    <tr>
+                                        <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                            Name
+                                        </th>
+                                        <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                            Rating
+                                        </th>
+                                        <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                            Rating Change
+                                        </th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    {% for i in all_data.university %}
+                                        <tr>
+                                            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                                                {{ i.0|get_name }}
+                                            </th>
+                                            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                                {{ i.1 }}
+                                            </td>
+                                            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                                <i class="fas {{ i.2|get_class }} mr-4"></i>
+                                                {{ i.2|rating_delta }}
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Two grid columns -->
+                <div class="grid grid-cols-1 p-4 space-y-8 lg:gap-8 lg:space-y-0 lg:grid-cols-3">
+                    <!-- Active users chart -->
+                    <div class="col-span-1 bg-white rounded-md dark:bg-darker">
+                        <!-- Card header -->
+                        <div class="p-4 border-b dark:border-primary">
+                            <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Active users right
+                                now</h4>
+                        </div>
+                        <p class="p-4">
+                                <span class="text-2xl font-medium text-gray-500 dark:text-light"
+                                      id="usersCount">0</span>
+                            <span class="text-sm font-medium text-gray-500 dark:text-primary">Users</span>
+                        </p>
+                        <!-- Chart -->
+                        <div class="relative p-4">
+                            <canvas id="activeUsersChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Line chart card -->
+                    <div class="col-span-2 bg-white rounded-md dark:bg-darker" x-data="{ isOn: false }">
+                        <!-- Card header -->
+                        <div class="flex items-center justify-between p-4 border-b dark:border-primary">
+                            <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Line Chart</h4>
+
+                        </div>
+                        <!-- Chart -->
+                        <canvas class="p-1" id="myChart"></canvas>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-      </div>
     </div>
 
-    <div class="block w-full overflow-x-auto">
-      <table class="items-center bg-transparent w-full border-collapse ">
-        <thead>
-          <tr>
-            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                          Page name
-                        </th>
-          <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                          Visitors
-                        </th>
-           <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                          Unique users
-                        </th>
-          <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                          Bounce rate
-                        </th>
-          </tr>
-        </thead>
 
-        <tbody>
-          <tr>
-            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-              /argon/
-            </th>
-            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-              4,569
-            </td>
-            <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-              340
-            </td>
-            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-              <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
-              46,53%
-            </td>
-          </tr>
-          <tr>
-            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
-              /argon/index.html
-            </th>
-            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-              3,985
-            </td>
-            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-              319
-            </td>
-            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-              <i class="fas fa-arrow-down text-orange-500 mr-4"></i>
-              46,53%
-            </td>
-          </tr>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+        var xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: xValues,
+                datasets: [
+                    {% for i in all_data.dept %}
+                        {
+                            label: '{{ i.0|get_name }}',
+                            data: {{ i.2 }},
+                            backgroundColor: '{{ i.3 }}',
+                            borderColor: '{{ i.3 }}',
+                            fill: false
+                        },
+                    {% endfor %}
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Chart.js Line Chart'
+                    }
+                }
+            },
+        });
+    </script>
 
 
 
-        </tbody>
 
-      </table>
-    </div>
-  </div>
-</div>
-
-</section>
 {% endblock %}

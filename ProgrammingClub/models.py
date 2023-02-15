@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 class contestant(models.Model):
     sid=models.IntegerField(primary_key=True)
@@ -34,4 +36,9 @@ class teams(models.Model):
     member2=models.ForeignKey(contestant,on_delete=models.CASCADE,related_name='member2')
     member3=models.ForeignKey(contestant,on_delete=models.CASCADE,related_name='member3')
     team_name=models.CharField(max_length=100,null=True,default=None, blank=True)
+
+class resent_datas(models.Model):
+    sid=models.ForeignKey(contestant,on_delete=models.CASCADE)
+    rating=models.CharField(max_length=10)
+    date=models.CharField(max_length=200,null=True,default=None, blank=True)
 

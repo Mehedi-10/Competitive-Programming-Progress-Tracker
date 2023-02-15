@@ -19,5 +19,4 @@ def synapse():
                 tmp.append(j.text)
         rnk_list.append(tmp)
     rnk_list=rnk_list[0:20]
-    pp=pd.DataFrame(rnk_list,columns =['Rank','University','Rating'])
-    return pp.to_html()
+    return rnk_list
