@@ -10,14 +10,22 @@ from .get_info import get_info,get_rating
 from .national_contests import synapse
 
 def home(request):
-
+    now = datetime.datetime.now()
     all={
         'dept':get_rating()[0],
-        'university':get_rating()[1]
-        # 'contestant_count':get_uni_data(),
+        'university':get_rating()[1],
+        'unirank':synapse(),
     }
-    # print(get_rating())
-    return render(request,'home.html',{'all_data':all})
+    for i in cnts_model.objects.all():
+        print(i.sid)
+    all['unirank']=str(all['unirank'][0]).split(' ')
+    try:
+        contest_date = list(fun().values())[0][0]
+    except:
+        contest_date={'date': 'unknown', 'event': 'No Contest'}
+    upcoming=(contest_date['event'],str(contest_date['date'])+", "+calendar.month_name[now.month]+' '+str(now.year))
+
+    return render(request,'home.html',{'all_data':all,'uni_rank':all['unirank'],'upcoming':upcoming,'contestant':[len(all['dept'])]})
 
 def contestant(request):
     all_contestant={}
@@ -29,6 +37,7 @@ def contestant(request):
     sort_data=[]
     for i in data:
         sort_data.append((i[0],i[1]))
+
     return render(request,'contestants.html',{'contestant':all_contestant,'pic':li,'sorted_list':sort_data})
 
 def calender(request):

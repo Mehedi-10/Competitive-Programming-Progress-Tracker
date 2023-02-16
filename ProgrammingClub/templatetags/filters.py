@@ -65,6 +65,16 @@ def cclink(key):
 
 @register.filter()
 def get_class(key):
+    print(key)
+    try:
+        if key[0]=='(':
+            key=remove_bracket(key)
+        if key[0]=='-':
+            return 'fa-arrow-down text-orange-500'
+        elif key[0]=='+':
+            return 'fa-arrow-up text-green-500'
+    except:
+        pass
     try:
         if key[-1] - key[-2] >= 0:
             return 'fa-arrow-up text-green-500'
@@ -89,11 +99,25 @@ def percentage(key):
 @register.filter()
 def card_class(key):
     try:
+        if key[0]=='(':
+            key=remove_bracket(key)
+        if key[0]=='-':
+            return 'text-orange-500 bg-orange-100'
+        elif key[0]=='+':
+            return 'text-green-500 bg-green-100'
+    except:
+        pass
+    try:
         if key[-1] - key[-2] >= 0:
             return 'text-green-500 bg-green-100'
         else:
             return 'text-orange-500 bg-orange-100'
     except:
         return 'text-green-500 bg-green-100'
+
+
+@register.filter()
+def remove_bracket(key):
+    return key[1:-1]
 
 

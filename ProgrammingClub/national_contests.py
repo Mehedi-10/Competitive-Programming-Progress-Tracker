@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
 def synapse():
     url = "https://synapse0.com/"
     page = requests.get(url)
@@ -18,5 +17,8 @@ def synapse():
                     continue
                 tmp.append(j.text)
         rnk_list.append(tmp)
-    rnk_list=rnk_list[0:20]
-    return rnk_list
+    indx=0
+    for i in range(0,len(rnk_list)):
+        if rnk_list[i][1]=='Comilla University':
+            indx=i
+    return rnk_list[indx]
