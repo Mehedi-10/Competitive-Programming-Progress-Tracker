@@ -3,7 +3,6 @@ from ..models import contestant
 
 register = template.Library()
 import random
-import streamlit as stt
 
 
 @register.filter
