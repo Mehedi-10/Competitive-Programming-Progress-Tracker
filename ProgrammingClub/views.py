@@ -48,14 +48,26 @@ def calender(request):
     contest_date=fun()
     return render(request,'calender.html',{'day':dis,'dat':date,'current_month':calendar.month_name[now.month]+' '+str(now.year),'contest':contest_date})
 
-def teams(request):
+def teams(request,team_name):
     li=['vecteezy_champ.jpg','vecteezy_programmer.jpg','Studying.jpg']
-
     team_data={}
     for i in team_model.objects.all():
         team_data.update({i.id:{'name':i.team_name,'members':[i.member1.sid,i.member2.sid,i.member3.sid]}})
-    all_data={
-        'img': li,
-        'team':team_data
-    }
+    try:
+        team_name=int(team_name)
+        all_data = {
+            'img':li,
+            'team': {team_name:team_data[team_name]}
+        }
+    except:
+        all_data={}
     return render(request,'teams.html',{'all_data':all_data})
+
+def teamlist(request):
+    team_data = {}
+    for i in team_model.objects.all():
+        team_data.update({i.id: {'name': i.team_name, 'members': [i.member1.sid, i.member2.sid, i.member3.sid]}})
+    all_data = {
+        'team': team_data
+    }
+    return render(request,'teamlist.html',{'all_data':all_data})

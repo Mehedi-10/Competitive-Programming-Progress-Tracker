@@ -1,0 +1,75 @@
+{% extends 'index.html' %}
+{% block title %}{{ 'Teams' }}{% endblock %}
+{% load static %}
+{% load filters %}
+{% block content %}
+     <div class="flex flex-wrap justify-center text-center mb-10 mt-10">
+        <div class="w-full lg:w-6/12 px-4">
+            <h1 class="text-gray-900 text-4xl font-bold mb-8">
+                Meet Our Teams
+            </h1>
+
+            <p class="text-gray-700 text-lg font-light">
+                With over 10 years of cp journey, we've got many well-seasoned team.
+            </p>
+        </div>
+    </div>
+<div class="flex flex-col">
+  <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="overflow-hidden">
+        <table class="min-w-full">
+          <thead class="bg-gray-200 border-b">
+            <tr>
+              <th scope="col" class="text-sm font-medium-bold text-gray-900 px-6 py-4 text-left">
+                #
+              </th>
+              <th scope="col" class="text-sm font-medium-bold text-gray-900 px-6 py-4 text-left">
+                Team Name
+              </th>
+              <th scope="col" class="text-sm font-medium-bold text-gray-900 px-6 py-4 text-left">
+                Member 1
+              </th>
+              <th scope="col" class="text-sm font-medium-bold text-gray-900 px-6 py-4 text-left">
+                Member 2
+              </th>
+                <th scope="col" class="text-sm font-medium-bold text-gray-900 px-6 py-4 text-left">
+                Member 3
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+                        {% for key,team in all_data.team.items %}
+
+            <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100" onclick="goto('{{ forloop.counter }}')">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium-bold text-gray-900">{{ forloop.counter }}</td>
+              <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
+                 {{ team.name }}
+              </td>
+                {% for member in team.members %}
+
+              <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
+                {{ member|get_name }}
+              </td>
+
+                    {% endfor %}
+            </tr>
+          {% endfor %}
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script>
+
+    function goto(team_name) {
+        window.location.href = "team@"+team_name;
+    }
+
+    </script>
+{% endblock %}
+

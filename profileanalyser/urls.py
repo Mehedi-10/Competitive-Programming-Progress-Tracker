@@ -14,8 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from ProgrammingClub.views import home,calender,contestant,teams
+from django.urls import path, re_path
+from ProgrammingClub.views import home,calender,contestant,teams,teamlist
 # from django.conf import settings
 # from django.conf.urls.static import static
 
@@ -25,6 +25,7 @@ urlpatterns = [
     path('home.html',home),
     path('calender.html',calender),
     path('contestants.html',contestant),
-    path('teams.html',teams),
+    re_path(r'^team@(?P<team_name>\d+)',teams),
+    path('teamlist.html',teamlist),
 ]
               # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

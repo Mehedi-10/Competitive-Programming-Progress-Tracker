@@ -26,6 +26,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@1&family=IBM+Plex+Serif:ital@1&display=swap"
           rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+
 
 </head>
 {#style="background-image: url('{% static 'icpc_dhaka_1.jpg' %}') ;#}
@@ -68,7 +73,7 @@
                            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                            aria-current="page"> Home </a>
 
-                        <a href="teams.html"
+                        <a href="teamlist.html"
                            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Teams</a>
 
                         <a href="contestants.html"
@@ -182,7 +187,6 @@
             $("#mobile-menu").hide();
         }
     });
-
 
 </script>
 
