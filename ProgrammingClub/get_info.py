@@ -194,14 +194,15 @@ def init_codechef(ob: contestant):
 
 from collections import deque
 
-names = ['codechef', 'codeforces', 'atcoder', 'lightoj', 'toph']
+names = ['codechef', 'atcoder', 'toph','lightoj','codeforces']
 init_array=deque([init_codechef, init_atcoder, init_toph, init_lightoj, init_codeforces])
-model_array=deque([codechef,atcoder, toph,lightoj,codeforces])
+model_array=[codechef,atcoder, toph,lightoj,codeforces]
 
 
 def get_info(student_id: int, Update_now=True):
     init_array.rotate(1)
-    model_array.rotate(1)
+    # model_array.rotate(1)
+    # names.rotate(1)
     try:
         ob = contestant.objects.get(sid=student_id)
     except:
@@ -300,11 +301,14 @@ def get_rating():
             all_dic.append((key, rating, rating_set, color[len(dic)%len(color)]))
     # print('pre',dic)
     # dept rank-list
-    dic.sort(key=lambda x: x[1], reverse=True)
-    # university rank-link
-    all_dic.sort(key=lambda x: x[1], reverse=True)
-    # weekly solved rank-list
-    weekly.sort(key=lambda x: x[1], reverse=True)
+    try:
+        dic.sort(key=lambda x: x[1], reverse=True)
+        # university rank-link
+        all_dic.sort(key=lambda x: x[1], reverse=True)
+        # weekly solved rank-list
+        weekly.sort(key=lambda x: x[1], reverse=True)
+    except:
+        pass
     # print('hi',dic)
     # print('hello',all_dic)
     # print('hp', weekly)

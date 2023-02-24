@@ -11,12 +11,15 @@ from .national_contests import synapse
 
 def home(request):
     now = datetime.datetime.now()
-    all={
-        'dept':get_rating()[0],
-        'university':get_rating()[1],
-        'weekly':get_rating()[2],
-        'unirank':synapse(),
-    }
+    try:
+        all={
+            'dept':get_rating()[0],
+            'university':get_rating()[1],
+            'weekly':get_rating()[2],
+            'unirank':synapse(),
+        }
+    except:
+        pass
 
     print('contestant list')
     dept_contestent_cnt=0;
@@ -24,10 +27,8 @@ def home(request):
         if str(i.sid)[3:5] == '08':
             dept_contestent_cnt+=1
         print(i.sid)
-    print(type(get_rating()[0]))
-
-    all['unirank']=str(all['unirank'][0]).split(' ')
     try:
+        all['unirank'] = str(all['unirank'][0]).split(' ')
         contest_date = list(fun().values())[0][0]
     except:
         contest_date={'date': 'Unknown', 'event': 'No Contest'}
@@ -39,13 +40,18 @@ def home(request):
 def contestant(request):
     all_contestant={}
     li=['vecteezy_champ.jpg','vecteezy_programmer.jpg','Studying.jpg']
-    for i in cnts_model.objects.all():
-        tmp={i.sid:get_info(i.sid,False)}
-        all_contestant.update(tmp)
-    data=get_rating()[0]
-    sort_data=[]
-    for i in data:
-        sort_data.append((i[0],i[1]))
+    try:
+        for i in cnts_model.objects.all():
+            tmp={i.sid:get_info(i.sid,False)}
+            all_contestant.update(tmp)
+        data=get_rating()[0]
+        sort_data=[]
+        for i in data:
+            sort_data.append((i[0],i[1]))
+    except:
+        pass
+    for i in all_contestant.items():
+        print(i)
 
     return render(request,'contestants.html',{'contestant':all_contestant,'pic':li,'sorted_list':sort_data})
 
@@ -72,12 +78,15 @@ def teams(request,team_name):
         all_data={}
     return render(request,'teams.html',{'all_data':all_data})
 def teamlist(request):
-
     team_data = {}
-    for i in team_model.objects.all():
-        team_data.update({i.id: {'name': i.team_name, 'members': [i.member1.sid, i.member2.sid, i.member3.sid]}})
-    all_data = {
-        'team': team_data
-    }
+    try:
+
+        for i in team_model.objects.all():
+            team_data.update({i.id: {'name': i.team_name, 'members': [i.member1.sid, i.member2.sid, i.member3.sid]}})
+        all_data = {
+            'team': team_data
+        }
+    except:
+        pass
 
     return render(request,'teamlist.html',{'all_data':all_data})
