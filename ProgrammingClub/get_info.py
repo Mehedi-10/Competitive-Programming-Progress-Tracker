@@ -229,7 +229,8 @@ def get_info(student_id: int, Update_now=True):
     return ojdata
 
 
-def stoi(num: str):
+def stoi(num):
+    num=str(num)
     s = '0'
     for i in num:
         if i >= '0' and i <= '9':
@@ -242,7 +243,7 @@ def get_rating():
     for i in contestant.objects.all():
         tmp1 = {}
         i_name = 0
-        for f in [codechef, codeforces, atcoder, lightoj, toph]:
+        for f in model_array:
             try:
                 ob = f.objects.get(sid=i.sid)
                 tmp1.update({names[i_name]: stodic(ob.info)})
