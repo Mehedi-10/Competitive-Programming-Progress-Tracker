@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a5b84af-18ca-4c2f-90e4-2be90cfb894a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/get_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/get_info.py" afterDir="false" />
-    </list>
+    <list default="true" id="7a5b84af-18ca-4c2f-90e4-2be90cfb894a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -284,7 +282,7 @@
       <workItem from="1677226395724" duration="14350000" />
       <workItem from="1677243163954" duration="8359000" />
       <workItem from="1677251805516" duration="13000" />
-      <workItem from="1677256735119" duration="2947000" />
+      <workItem from="1677256735119" duration="3294000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1675375127621</created>
@@ -433,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677259459191</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="deploy done-5">
+      <created>1677259950932</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1677259950932</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
