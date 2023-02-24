@@ -14,24 +14,33 @@ def home(request):
     all={
         'dept':get_rating()[0],
         'university':get_rating()[1],
+        'weekly':get_rating()[2],
         'unirank':synapse(),
     }
+
+    print('contestant list')
+    dept_contestent_cnt=0;
     for i in cnts_model.objects.all():
+        if str(i.sid)[3:5] == '08':
+            dept_contestent_cnt+=1
         print(i.sid)
+    print(type(get_rating()[0]))
+
     all['unirank']=str(all['unirank'][0]).split(' ')
     try:
         contest_date = list(fun().values())[0][0]
     except:
-        contest_date={'date': 'unknown', 'event': 'No Contest'}
+        contest_date={'date': 'Unknown', 'event': 'No Contest'}
     upcoming=(contest_date['event'],str(contest_date['date'])+", "+calendar.month_name[now.month]+' '+str(now.year))
 
-    return render(request,'home.html',{'all_data':all,'uni_rank':all['unirank'],'upcoming':upcoming,'contestant':[len(all['dept'])]})
+
+    return render(request,'home.html',{'all_data':all,'uni_rank':all['unirank'],'upcoming':upcoming,'contestant':[dept_contestent_cnt]})
 
 def contestant(request):
     all_contestant={}
     li=['vecteezy_champ.jpg','vecteezy_programmer.jpg','Studying.jpg']
     for i in cnts_model.objects.all():
-        tmp={i.sid:get_info(i.sid)}
+        tmp={i.sid:get_info(i.sid,False)}
         all_contestant.update(tmp)
     data=get_rating()[0]
     sort_data=[]
@@ -62,12 +71,28 @@ def teams(request,team_name):
     except:
         all_data={}
     return render(request,'teams.html',{'all_data':all_data})
+import pandas as pd
 
 def teamlist(request):
+
+    tab = pd.read_csv('ProgrammingClub/Untitled.csv')
+    for i in tab.values:
+        ob=cnts_model(
+            sid=i[1],
+            sname=i[2],
+            toph_handle=i[3],
+        cf_handle = i[4],
+        cc_handle = i[5],
+        atcoder_handle = i[6],
+        loj_handle =i[7]
+        )
+        ob.save()
+
     team_data = {}
     for i in team_model.objects.all():
         team_data.update({i.id: {'name': i.team_name, 'members': [i.member1.sid, i.member2.sid, i.member3.sid]}})
     all_data = {
         'team': team_data
     }
+
     return render(request,'teamlist.html',{'all_data':all_data})

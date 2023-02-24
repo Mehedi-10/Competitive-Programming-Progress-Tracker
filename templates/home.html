@@ -24,9 +24,9 @@
                                 Total Contestant
                             </h6>
                             <span class="text-xl font-semibold">{{ contestant.0 }}</span>
-{#                            <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">#}
-{#                      {{ contestant.1|percentage }}#}
-                    </span>
+                            {#                            <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">#}
+                            {#                      {{ contestant.1|percentage }}#}
+                            </span>
                         </div>
                         <div>
                     <span>
@@ -35,7 +35,7 @@
                     </span>
                         </div>
                     </div>
-                    <div class="flex md:col-span-2 items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+                    <div class="flex lg:col-span-2 items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
                         <div>
                             <h6 class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
                                 Upcoming Contest
@@ -52,24 +52,24 @@
                         </div>
                     </div>
 
-{#                    <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">#}
-{#                        <div>#}
-{#                            <h6#}
-{#                                    class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light"#}
-{#                            >#}
-{#                                Last Contest University Rank#}
-{#                            </h6>#}
-{#                            <span class="text-xl font-semibold">{{ last_uni_rank.0 }}</span>#}
-{#                            <span class="inline-block px-2 py-px ml-2 text-xs {{ last_uni_rank.2|card_class }} rounded-md">#}
-{#                      {{ last_uni_rank.1 }}#}
-{#                    </span>#}
-{#                        </div>#}
-{#                        <div>#}
-{#                    <span>#}
-{#                        <img height="54px" width="54px" src="{% static 'top-rated.png' %}">#}
-{#                    </span>#}
-{#                        </div>#}
-{#                    </div>#}
+                    {#                    <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">#}
+                    {#                        <div>#}
+                    {#                            <h6#}
+                    {#                                    class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light"#}
+                    {#                            >#}
+                    {#                                Last Contest University Rank#}
+                    {#                            </h6>#}
+                    {#                            <span class="text-xl font-semibold">{{ last_uni_rank.0 }}</span>#}
+                    {#                            <span class="inline-block px-2 py-px ml-2 text-xs {{ last_uni_rank.2|card_class }} rounded-md">#}
+                    {#                      {{ last_uni_rank.1 }}#}
+                    {#                    </span>#}
+                    {#                        </div>#}
+                    {#                        <div>#}
+                    {#                    <span>#}
+                    {#                        <img height="54px" width="54px" src="{% static 'top-rated.png' %}">#}
+                    {#                    </span>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
 
                     <!-- Tickets card -->
                     <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
@@ -82,7 +82,7 @@
 
                       {{ uni_rank.1|remove_bracket }}
                                 {% with x=uni_rank.1|remove_bracket %}
-                                <i class="fas {{ x|get_class }} mr-4"></i>
+                                    <i class="fas {{ x|get_class }} mr-4"></i>
                                 {% endwith %}
                     </span>
                         </div>
@@ -101,43 +101,27 @@
                         <div class="flex items-center justify-between p-4 border-b dark:border-primary">
                             <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Department
                                 Rank-list</h4>
-                            {#                            <div class="flex items-center">#}
-                            {#                                <button#}
-                            {#                                        class="relative focus:outline-none"#}
-                            {#                                        x-cloak#}
-                            {#                                        @click="isOn = !isOn; $parent.updateDoughnutChart(isOn)"#}
-                            {#                                >#}
-                            {#                                    <div#}
-                            {#                                            class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-primary-darker"#}
-                            {#                                    ></div>#}
-                            {#                                    <div#}
-                            {#                                            class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 ease-in-out transform scale-110 rounded-full shadow-sm"#}
-                            {#                                            :class="{ 'translate-x-0  bg-white dark:bg-primary-100': !isOn, 'translate-x-6 bg-primary-light dark:bg-primary': isOn }"#}
-                            {#                                    ></div>#}
-                            {#                                </button>#}
-                            {#                            </div>#}
                         </div>
-                        <!-- Chart -->
-                        <div class="relative p-4 h-72">
+                         <div class="relative p-4 h-72">
 
                             <div class="block w-full overflow-x-auto">
                                 <table class="items-center bg-transparent w-full border-collapse ">
                                     <thead>
                                     <tr>
-                                        <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                        <th class="px-5 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                             Name
                                         </th>
-                                        <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                        <th class="px-5 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                             Rating
                                         </th>
-                                        <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                        <th class="px-5 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                             Rating Change
                                         </th>
                                     </tr>
                                     </thead>
 
                                     <tbody>
-                                    {% for i in all_data.dept %}
+                                    {% for i in all_data.dept|slice:":5" %}
                                         <tr>
                                             <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
                                                 {{ i.0|get_name }}
@@ -156,28 +140,13 @@
                                 </table>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="col-1 bg-white rounded-md dark:bg-darker">
                         <!-- Card header -->
                         <div class="flex items-center justify-between p-4 border-b dark:border-primary">
                             <h4 class="text-lg font-semibold text-gray-500 dark:text-light">University Rank-list</h4>
-                            {#                            <div class="flex items-center space-x-2">#}
-                            {#                                <span class="text-sm text-gray-500 dark:text-light">Last year</span>#}
-                            {#                                <button#}
-                            {#                                        class="relative focus:outline-none"#}
-                            {#                                        x-cloak#}
-                            {#                                        @click="isOn = !isOn; $parent.updateBarChart(isOn)"#}
-                            {#                                >#}
-                            {#                                    <div#}
-                            {#                                            class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-primary-darker"#}
-                            {#                                    ></div>#}
-                            {#                                    <div#}
-                            {#                                            class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 ease-in-out transform scale-110 rounded-full shadow-sm"#}
-                            {#                                            :class="{ 'translate-x-0  bg-white dark:bg-primary-100': !isOn, 'translate-x-6 bg-primary-light dark:bg-primary': isOn }"#}
-                            {#                                    ></div>#}
-                            {#                                </button>#}
-                            {#                            </div>#}
                         </div>
                         <!-- Chart -->
                         <div class="relative p-4 h-72">
@@ -187,20 +156,20 @@
                                 <table class="items-center bg-transparent w-full border-collapse ">
                                     <thead>
                                     <tr>
-                                        <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                        <th class="px-5 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                             Name
                                         </th>
-                                        <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                        <th class="px-5 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                             Rating
                                         </th>
-                                        <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                        <th class="px-5 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                             Rating Change
                                         </th>
                                     </tr>
                                     </thead>
 
                                     <tbody>
-                                    {% for i in all_data.university %}
+                                    {% for i in all_data.university|slice:":5" %}
                                         <tr>
                                             <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
                                                 {{ i.0|get_name }}
@@ -220,41 +189,74 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
 
-                <!-- Two grid columns -->
-                <div class="grid grid-cols-1 p-4 space-y-8 lg:gap-8 lg:space-y-0 lg:grid-cols-3">
-                    <!-- Active users chart -->
-                    <div class="col-span-1 bg-white rounded-md dark:bg-darker">
-                        <!-- Card header -->
+                <div class="grid grid-cols-1 p-4 space-y-8 lg:gap-8 lg:space-y-0 lg:grid-cols-5">
+
+                    <div class="col-span-3 bg-white rounded-md dark:bg-darker xs:col-span-1">
                         <div class="p-4 border-b dark:border-primary">
-                            <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Active users right
-                                now</h4>
+                            <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Weekly Problem Solving Data
+                                </h4>
                         </div>
-{#                        <p class="p-4">#}
-{#                                <span class="text-2xl font-medium text-gray-500 dark:text-light"#}
-{#                                      id="usersCount">0</span>#}
-{#                            <span class="text-sm font-medium text-gray-500 dark:text-primary">Users</span>#}
-{#                        </p>#}
-                        <!-- Chart -->
-                        <div class="relative p-4">
-                            <canvas id="activeUsersChart"></canvas>
-                        </div>
+                        <canvas class="p-1" id="UsersWeeklyChart"></canvas>
                     </div>
 
-                    <!-- Line chart card -->
                     <div class="col-span-2 bg-white rounded-md dark:bg-darker xs:col-span-1">
-                        <!-- Card header -->
+                        <div class="col-span-1 bg-white rounded-md dark:bg-darker">
                         <div class="flex items-center justify-between p-4 border-b dark:border-primary">
-                            <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Line Chart of All Contestant</h4>
-
+                            <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Top Problem Solvers</h4>
                         </div>
-                        <!-- Chart -->
-                        <canvas class="p-1" id="myChart"></canvas>
+                         <div class="relative p-4 h-72">
 
+                            <div class="block w-full overflow-hide">
+                                <table class="items-center bg-transparent w-full border-collapse  ">
+                                    <thead>
+                                    <tr>
+                                        <th class="px-5 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                            Name
+                                        </th>
+                                        <th class="px-5 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                            Total Solved
+                                        </th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    {% for i in all_data.weekly|slice:":5" %}
+                                        <tr>
+                                            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                                                {{ i.0|get_name }}
+                                            </th>
+                                            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4  text-center">
+                                                {{ i.1 }}
+                                            </td>
+
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
                     </div>
                 </div>
+
+                <div class="p-4 space-y-8 lg:gap-8 lg:space-y-0">
+                    <div class="bg-white rounded-md dark:bg-darker">
+                        <div class="flex items-center justify-between p-4 border-b dark:border-primary">
+                            <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Last 15 Days</h4>
+                            <div class="flex items-center space-x-2">
+                                <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold  px-2 rounded"
+                                        onclick="resetlines()">
+                                    <span class="material-symbols-outlined text-sm">reset_image</span></button>
+                            </div>
+                        </div>
+                        <canvas class="p-1" id="myChart"></canvas>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -264,21 +266,98 @@
 
     <script>
         const ctx = document.getElementById('myChart');
-        var xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
-        new Chart(ctx, {
-            type: 'line',
+        {# rating change date #}
+
+        var xValues = [];
+
+        {% for i in all_data.dept.0.2 %}
+            xValues.push('{{ i.1|day|date:"M d" }}');
+        {% endfor %}
+
+        xValues.push('{{ all_data.dept.0.2|last|last|next_day|date:"M d" }}');
+
+
+        const mylines = new Chart(ctx,
+            {
+
+                type: 'line',
+                data: {
+                    labels: xValues,
+                    datasets: [
+                        {% for i in all_data.dept %}
+                            {
+                                label: '{{ i.0|get_name }}',
+                                data: [
+                                    {% for i in i.2 %}
+                                        {{ i.0 }},
+                                    {% endfor %}
+
+                                ],
+                                backgroundColor: '{{ i.3 }}',
+                                borderColor: '{{ i.3 }}',
+                                fill: false,
+                                tension: 0.1
+                            },
+                        {% endfor %}
+                    ]
+                },
+                options: {
+
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                        },
+
+                        zoom: {
+                            zoom: {
+                                wheel: {
+                                    enabled: true,
+                                },
+                                pinch: {
+                                    enabled: true
+                                },
+                                mode: 'xy',
+                            }
+                        }
+                    },
+
+
+                },
+            });
+
+        function resetlines() {
+            mylines.resetZoom();
+        }
+
+        const weekly = document.getElementById('UsersWeeklyChart');
+
+        const days = [];
+
+        {% for j in all_data.weekly.0.2|get_solved_weekly %}
+            days.push('{{ j.0|date:"D" }}');
+        {% endfor %}
+
+        const weeklydata = [];
+        const barchart = new Chart(weekly, {
+            type: 'bar',
             data: {
-                labels: xValues,
+                labels: days,
+
                 datasets: [
-                    {% for i in all_data.dept %}
+
+                    {% for i in all_data.weekly %}
                         {
                             label: '{{ i.0|get_name }}',
-                            data: {{ i.2 }},
+                            data: [
+                                {% for j in i.2|get_solved_weekly %}
+                                    {{ j.1 }},
+                                {% endfor %}
+                            ],
                             backgroundColor: '{{ i.3 }}',
-                            borderColor: '{{ i.3 }}',
-                            fill: false
                         },
                     {% endfor %}
+
                 ]
             },
             options: {
@@ -287,16 +366,12 @@
                     legend: {
                         position: 'top',
                     },
-                    title: {
-                        display: true,
-                        text: 'Chart.js Line Chart'
-                    }
                 }
             },
         });
+
+
     </script>
-
-
 
 
 {% endblock %}

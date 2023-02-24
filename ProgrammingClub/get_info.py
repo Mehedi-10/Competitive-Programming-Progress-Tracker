@@ -28,7 +28,15 @@ def time_delta(s):
 
     return delta.total_seconds() < (86400 // 2)
 
-    # 86400
+def time_difference_calc(s):
+    t1 = str(s)
+    t11 = t1[0:19].replace('-', '/')
+    t2 = str(datetime.now())
+    t22 = t2[0:19].replace('-', '/')
+    delta = datetime.strptime(t22, '%Y/%m/%d %H:%M:%S') - datetime.strptime(t11, '%Y/%m/%d %H:%M:%S')
+
+    return delta.total_seconds()
+
 
 
 def init_atcoder(ob: contestant):
@@ -185,60 +193,116 @@ def init_codechef(ob: contestant):
     return ojdata
 
 
-def get_info(student_id: int):
+names = ['codechef', 'codeforces', 'atcoder', 'lightoj', 'toph']
+
+
+def get_info(student_id: int, Update_now=True):
     try:
         ob = contestant.objects.get(sid=student_id)
     except:
         return {}
     ojdata = {}
-    for f in [init_codechef, init_atcoder, init_toph, init_lightoj, init_codeforces]:
-        try:
-            ojdata.update(f(ob))
-        except:
-            pass
+
+    if Update_now:
+        for f in [init_codechef, init_atcoder, init_toph, init_lightoj, init_codeforces]:
+            try:
+                ojdata.update(f(ob))
+            except:
+                pass
+    else:
+        i_name = 0
+        for f in [codechef, codeforces, atcoder, lightoj, toph]:
+            try:
+                ob = f.objects.get(sid=student_id)
+                ojdata.update({names[i_name]: stodic(ob.info)})
+            except:
+                pass
+            i_name += 1
+
+    print(ojdata)
+
     return ojdata
+
+
+def stoi(num: str):
+    s = '0'
+    for i in num:
+        if i >= '0' and i <= '9':
+            s += i
+    return int(s)
 
 
 def get_rating():
     all_contestant = {}
     for i in contestant.objects.all():
-        tmp = {i.sid: get_info(i.sid)}
+        tmp1 = {}
+        i_name = 0
+        for f in [codechef, codeforces, atcoder, lightoj, toph]:
+            try:
+                ob = f.objects.get(sid=i.sid)
+                tmp1.update({names[i_name]: stodic(ob.info)})
+            except:
+                pass
+            i_name += 1
+        tmp = {i.sid: tmp1}
+        # print(i.sid,tmp)
         all_contestant.update(tmp)
     dic = []
     all_dic = []
+    weekly = []
     for key, val in all_contestant.items():
+        total_solved = 0
+        calc_ok = True
+        # print(key, end=" ")
         for key1, val1 in val.items():
+            # print(key1, val1)
             try:
-                rating = int(val1['rating'])
+                rating = stoi(val1['rating'])
+                total_solved += stoi(val1['solved'])
             except:
-                rating = 1
-        rating /= 6
-        rating = math.ceil(rating)
-        if not resent_datas.objects.filter(sid=key).exists():
-            ob = resent_datas(
-                sid_id=key,
-                rating=str(rating),
-                date=datetime.now().__str__()
-            )
-            ob.save()
-        else:
-            if resent_datas.objects.filter(sid=key).order_by('date').last().rating != str(rating):
+                rating = 0
+                calc_ok = False
+                print("error getting rating")
+        if calc_ok:
+            rating /= 6
+            rating = math.ceil(rating)
+            if not resent_datas.objects.filter(sid=key).exists():
                 ob = resent_datas(
                     sid_id=key,
+                    solved=str(total_solved),
                     rating=str(rating),
                     date=datetime.now().__str__()
                 )
                 ob.save()
-        rating_set = []
-
-        for i in resent_datas.objects.filter(sid=key).order_by('date'):
-            rating_set.append(int(i.rating))
-        color = ['#f87171', '#a3e635', '#4ade80', '#34d399', '#22d3ee', '#38bdf8', '#60a5fa', '#818cf8', '#a78bfa',
-                 '#fb7185',
-                 '#c084fc', '#ef4444', '#84cc16', '#22c55e', '#06b6d4', '#a855f7']
-        if str(key)[3:5] == '08':
-            dic.append((key, rating, rating_set, color[len(dic)]))
-        all_dic.append((key, rating, rating_set, color[len(dic)]))
+            else:
+                if time_difference_calc(resent_datas.objects.filter(sid=key).order_by('date').last().date)>=86400:
+                    ob = resent_datas(
+                        sid_id=key,
+                        solved=str(total_solved),
+                        rating=str(rating),
+                        date=datetime.now().__str__()
+                    )
+                    ob.save()
+            rating_set = []
+            solved_set = []
+            for i in resent_datas.objects.filter(sid=key).order_by('date'):
+                rating_set.append((int(i.rating), i.date))
+                solved_set.append((int(i.solved), i.date))
+            color = ['#f87171', '#a3e635', '#4ade80', '#34d399', '#22d3ee', '#38bdf8', '#60a5fa', '#818cf8', '#a78bfa',
+                     '#fb7185',
+                     '#c084fc', '#ef4444', '#84cc16', '#22c55e', '#06b6d4', '#a855f7']
+            if str(key)[3:5] == '08':
+                dic.append((key, rating, rating_set, color[len(dic)]))
+                weekly.append((key, total_solved, solved_set, color[len(dic)]))
+            all_dic.append((key, rating, rating_set, color[len(dic)]))
+    # print('pre',dic)
+    # dept rank-list
     dic.sort(key=lambda x: x[1], reverse=True)
+    # university rank-link
     all_dic.sort(key=lambda x: x[1], reverse=True)
-    return (dic, all_dic)
+    # weekly solved rank-list
+    weekly.sort(key=lambda x: x[1], reverse=True)
+    # print('hi',dic)
+    # print('hello',all_dic)
+    # print('hp', weekly)
+    return (dic, all_dic, weekly)

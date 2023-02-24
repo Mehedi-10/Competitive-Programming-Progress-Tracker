@@ -8,7 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.0/dist/chartjs-plugin-zoom.min.js"></script>
     <title>{% block title %}{% endblock %}</title>
     {#<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />#}
     {#<script defer src="https://pyscript.net/latest/pyscript.js"></script>#}
@@ -26,18 +30,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@1&family=IBM+Plex+Serif:ital@1&display=swap"
           rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script type="text/javascript" charset="utf8"
-            src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 </head>
 {#style="background-image: url('{% static 'icpc_dhaka_1.jpg' %}') ;#}
 
 <body class="bg-slate-100 dark:bg-dark dark:text-light" style="font-family: 'IBM Plex Mono', monospace;">
 
-<nav class="bg-gray-800">
+<nav class="bg-gray-800 shadow">
 
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
@@ -70,17 +70,17 @@
                 <div class="hidden sm:ml-6 sm:block">
                     <div class="flex space-x-4">
                         <a href="home.html"
-                           class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                           class="border-b-2 border-transparent text-gray-300 hover:border-blue-500 hover:text-white px-3 py-2 text-sm font-medium"
                            aria-current="page"> Home </a>
 
                         <a href="teamlist.html"
-                           class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Teams</a>
+                           class="border-b-2 border-transparent text-gray-300 hover:border-blue-500 hover:text-white px-3 py-2 text-sm font-medium">Teams</a>
 
                         <a href="contestants.html"
-                           class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contestants</a>
+                           class="border-b-2 border-transparent text-gray-300 hover:border-blue-500 hover:text-white px-3 py-2 text-sm font-medium">Contestants</a>
 
                         <a href="calender.html"
-                           class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+                           class="border-b-2 border-transparent text-gray-300 hover:border-blue-500  hover:text-white px-3 py-2 text-sm font-medium">Calendar</a>
                     </div>
                 </div>
             </div>
@@ -115,7 +115,7 @@
             <a href="home.html"
                class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
 
-            <a href="teams.html"
+            <a href="teamlist.html"
                class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Teams</a>
 
             <a href="contestants.html"
@@ -139,12 +139,6 @@
         <div class="grid justify-center  lg:justify-between">
             <div class="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
                 <span>Copy right © 2023 by Matrix </span>
-                {#				<a rel="noopener noreferrer" href="#">#}
-                {#					<span>No Privacy policy</span>#}
-                {#				</a>#}
-                {#				<a rel="noopener noreferrer" href="#">#}
-                {#					<span>No Terms of service</span>#}
-                {#				</a>#}
             </div>
             <div class="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
                 <a rel="noopener noreferrer" href="mailto:mehedihasanarafat10@gmail.com" title="Email"
@@ -165,6 +159,7 @@
         </div>
     </div>
 </footer>
+
 
 {% block script %} {% endblock %}
 <script>

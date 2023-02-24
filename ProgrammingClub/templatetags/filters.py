@@ -3,6 +3,7 @@ from ..models import contestant
 
 register = template.Library()
 import random
+import datetime
 
 
 @register.filter
@@ -12,7 +13,7 @@ def get_item(dictionary, key):
 
 @register.filter
 def get_name(key):
-    return contestant.objects.get(sid=key).sname
+    return contestant.objects.get(sid=key).sname.title()
 
 
 @register.filter
@@ -66,11 +67,11 @@ def cclink(key):
 def get_class(key):
     print(key)
     try:
-        if key[0]=='(':
-            key=remove_bracket(key)
-        if key[0]=='-':
+        if key[0] == '(':
+            key = remove_bracket(key)
+        if key[0] == '-':
             return 'fa-arrow-down text-orange-500'
-        elif key[0]=='+':
+        elif key[0] == '+':
             return 'fa-arrow-up text-green-500'
     except:
         pass
@@ -89,20 +90,24 @@ def rating_delta(key):
         return key[-1] - key[-2]
     except:
         return 0
+
+
 @register.filter()
 def percentage(key):
     try:
         return key[-1] - key[-2]
     except:
         return 0
+
+
 @register.filter()
 def card_class(key):
     try:
-        if key[0]=='(':
-            key=remove_bracket(key)
-        if key[0]=='-':
+        if key[0] == '(':
+            key = remove_bracket(key)
+        if key[0] == '-':
             return 'text-orange-500 bg-orange-100'
-        elif key[0]=='+':
+        elif key[0] == '+':
             return 'text-green-500 bg-green-100'
     except:
         pass
@@ -120,3 +125,51 @@ def remove_bracket(key):
     return key[1:-1]
 
 
+@register.filter()
+def day(date):
+    date = date[0:19].replace('-', '/')
+    x = datetime.datetime.strptime(date, '%Y/%m/%d %H:%M:%S')
+    return x
+
+
+@register.filter()
+def next_day(date):
+    date = date[0:19].replace('-', '/')
+    x = datetime.datetime.strptime(date, '%Y/%m/%d %H:%M:%S')
+    x = x + datetime.timedelta(days=1)
+    print(x)
+    return x
+
+
+@register.filter()
+def get_solved_weekly(data):
+    day_solved = {}
+    #
+    for i in data:
+        today = i[1]
+        today = today[0:19].replace('-', '/')
+        x = datetime.datetime.strptime(today, '%Y/%m/%d %H:%M:%S')
+        day_solved.update({x.date().__str__(): int(i[0])})
+
+    today = datetime.datetime.now().__str__()
+    today = today[0:19].replace('-', '/')
+    x = datetime.datetime.strptime(today, '%Y/%m/%d %H:%M:%S')
+    pre = list(day_solved.keys())[-1]
+    for i in range(8):
+        x = x - datetime.timedelta(days=1)
+        if x.date().__str__() not in day_solved.keys():
+            day_solved.update({x.date().__str__(): day_solved[pre]})
+        else:
+            pre = x.date().__str__()
+    day_solved = list(day_solved.items())
+    day_solved.sort(reverse=True)
+    new_day_solved = []
+
+    for i in range(len(day_solved) - 1):
+        today = day_solved[i][0]
+        today = today[0:19].replace('-', '/')
+        new_day_solved.append(
+            (datetime.datetime.strptime(today, '%Y/%m/%d'), min(day_solved[i][1] - day_solved[i + 1][1], 100)))
+    new_day_solved=new_day_solved[0:7]
+    new_day_solved.reverse()
+    return new_day_solved

@@ -39,6 +39,7 @@ class teams(models.Model):
 
 class resent_datas(models.Model):
     sid=models.ForeignKey(contestant,on_delete=models.CASCADE)
-    rating=models.CharField(max_length=10)
+    rating=models.CharField(max_length=10,null=True,blank=True)
+    solved=models.CharField(max_length=10,null=True,blank=True)
     date=models.CharField(max_length=200,null=True,default=None, blank=True)
 
