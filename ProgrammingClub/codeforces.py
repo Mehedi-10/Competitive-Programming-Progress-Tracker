@@ -4,7 +4,7 @@ import requests
 import json
 from bs4 import BeautifulSoup
 from lxml import etree
-rest_time=5
+rest_time=2
 sys.stdout.reconfigure(encoding='utf-8')
 
 class CODEFORCES:

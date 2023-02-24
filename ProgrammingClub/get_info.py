@@ -9,8 +9,8 @@ from .lightoj import LIGHTOJ as loj
 from .atcoder import ATCODER as ac
 from .models import contestant, codechef, codeforces, atcoder, lightoj, toph, resent_datas
 
-take_rest = 5
-
+take_rest = 3
+take_lit_rest=2
 
 def stodic(s: str):
     s = s.strip('{}')
@@ -55,7 +55,7 @@ def init_atcoder(ob: contestant):
         except:
             cntstnt = ac(handle)
             if not cntstnt.status:
-                time.sleep(5)
+                time.sleep(take_lit_rest)
             else:
                 ojdata.setdefault('atcoder')
                 ojdata['atcoder'] = stodic(cntstnt.info.__str__())
@@ -86,7 +86,7 @@ def init_codeforces(ob: contestant):
         except:
             cntstnt = cf(handle)
             if not cntstnt.status:
-                time.sleep(5)
+                time.sleep(take_lit_rest)
             else:
                 ojdata.setdefault('codeforces')
                 ojdata['codeforces'] = str(cntstnt.info.__str__())
@@ -117,7 +117,7 @@ def init_toph(ob: contestant):
         except:
             cntstnt = tp(handle)
             if not cntstnt.status:
-                time.sleep(5)
+                time.sleep(take_lit_rest)
             else:
                 ojdata.setdefault('toph')
                 ojdata['toph'] = stodic(cntstnt.info.__str__())
@@ -148,7 +148,7 @@ def init_lightoj(ob: contestant):
         except:
             cntstnt = loj(handle)
             if not cntstnt.status:
-                time.sleep(5)
+                time.sleep(take_lit_rest)
             else:
                 ojdata.setdefault('lightoj')
                 ojdata['lightoj'] = stodic(cntstnt.info.__str__())
@@ -179,7 +179,7 @@ def init_codechef(ob: contestant):
         except:
             cntstnt = cc(handle)
             if not cntstnt.status:
-                time.sleep(5)
+                time.sleep(take_lit_rest)
             else:
                 ojdata.setdefault('codechef')
                 ojdata['codechef'] = stodic(cntstnt.info.__str__())
@@ -192,11 +192,16 @@ def init_codechef(ob: contestant):
             time.sleep(take_rest)
     return ojdata
 
+from collections import deque
 
 names = ['codechef', 'codeforces', 'atcoder', 'lightoj', 'toph']
+init_array=deque([init_codechef, init_atcoder, init_toph, init_lightoj, init_codeforces])
+model_array=deque([codechef,atcoder, toph,lightoj,codeforces])
 
 
 def get_info(student_id: int, Update_now=True):
+    init_array.rotate(1)
+    model_array.rotate(1)
     try:
         ob = contestant.objects.get(sid=student_id)
     except:
@@ -204,14 +209,14 @@ def get_info(student_id: int, Update_now=True):
     ojdata = {}
 
     if Update_now:
-        for f in [init_codechef, init_atcoder, init_toph, init_lightoj, init_codeforces]:
+        for f in init_array:
             try:
                 ojdata.update(f(ob))
             except:
                 pass
     else:
         i_name = 0
-        for f in [codechef, codeforces, atcoder, lightoj, toph]:
+        for f in model_array:
             try:
                 ob = f.objects.get(sid=student_id)
                 ojdata.update({names[i_name]: stodic(ob.info)})
@@ -245,7 +250,6 @@ def get_rating():
                 pass
             i_name += 1
         tmp = {i.sid: tmp1}
-        # print(i.sid,tmp)
         all_contestant.update(tmp)
     dic = []
     all_dic = []
@@ -289,12 +293,11 @@ def get_rating():
                 rating_set.append((int(i.rating), i.date))
                 solved_set.append((int(i.solved), i.date))
             color = ['#f87171', '#a3e635', '#4ade80', '#34d399', '#22d3ee', '#38bdf8', '#60a5fa', '#818cf8', '#a78bfa',
-                     '#fb7185',
-                     '#c084fc', '#ef4444', '#84cc16', '#22c55e', '#06b6d4', '#a855f7']
+                     '#fb7185','#c084fc', '#ef4444', '#84cc16', '#22c55e', '#06b6d4', '#a855f7']
             if str(key)[3:5] == '08':
-                dic.append((key, rating, rating_set, color[len(dic)]))
-                weekly.append((key, total_solved, solved_set, color[len(dic)]))
-            all_dic.append((key, rating, rating_set, color[len(dic)]))
+                dic.append((key, rating, rating_set, color[len(dic)%len(color)]))
+                weekly.append((key, total_solved, solved_set, color[len(dic)%len(color)]))
+            all_dic.append((key, rating, rating_set, color[len(dic)%len(color)]))
     # print('pre',dic)
     # dept rank-list
     dic.sort(key=lambda x: x[1], reverse=True)

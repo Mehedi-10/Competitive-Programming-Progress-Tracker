@@ -71,22 +71,7 @@ def teams(request,team_name):
     except:
         all_data={}
     return render(request,'teams.html',{'all_data':all_data})
-import pandas as pd
-
 def teamlist(request):
-
-    tab = pd.read_csv('ProgrammingClub/Untitled.csv')
-    for i in tab.values:
-        ob=cnts_model(
-            sid=i[1],
-            sname=i[2],
-            toph_handle=i[3],
-        cf_handle = i[4],
-        cc_handle = i[5],
-        atcoder_handle = i[6],
-        loj_handle =i[7]
-        )
-        ob.save()
 
     team_data = {}
     for i in team_model.objects.all():

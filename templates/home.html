@@ -262,16 +262,14 @@
         </div>
     </div>
 
-
-
     <script>
         const ctx = document.getElementById('myChart');
         {# rating change date #}
 
         var xValues = [];
 
-        {% for i in all_data.dept.0.2 %}
-            xValues.push('{{ i.1|day|date:"M d" }}');
+        {% for i in all_data.dept.0.2|get_rating_fortnight %}
+            xValues.push('{{ i.0|date:"M d" }}');
         {% endfor %}
 
         xValues.push('{{ all_data.dept.0.2|last|last|next_day|date:"M d" }}');
@@ -288,8 +286,8 @@
                             {
                                 label: '{{ i.0|get_name }}',
                                 data: [
-                                    {% for i in i.2 %}
-                                        {{ i.0 }},
+                                    {% for i in i.2|get_rating_fortnight %}
+                                        {{ i.1 }},
                                     {% endfor %}
 
                                 ],

@@ -4,9 +4,11 @@ from .get_info import get_info
 from .models import contestant
 from apscheduler.schedulers.background import BackgroundScheduler
 def schedule():
+
     for i in contestant.objects.all():
         get_info(i.sid)
+
 def start():
     sched=BackgroundScheduler()
-    sched.add_job(schedule,'interval',seconds=3600)
+    sched.add_job(schedule,'interval',seconds=1800)
     sched.start()
