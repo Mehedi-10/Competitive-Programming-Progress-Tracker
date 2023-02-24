@@ -225,7 +225,6 @@ def get_info(student_id: int, Update_now=True):
                 pass
             i_name += 1
 
-    print(ojdata)
 
     return ojdata
 

@@ -65,7 +65,6 @@ def cclink(key):
 
 @register.filter()
 def get_class(key):
-    print(key)
     try:
         if key[0] == '(':
             key = remove_bracket(key)
@@ -137,7 +136,6 @@ def next_day(date):
     date = date[0:19].replace('-', '/')
     x = datetime.datetime.strptime(date, '%Y/%m/%d %H:%M:%S')
     x = x + datetime.timedelta(days=1)
-    print(x)
     return x
 
 @register.filter()
