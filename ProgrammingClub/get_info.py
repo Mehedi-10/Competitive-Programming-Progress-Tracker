@@ -198,7 +198,7 @@ init_array=deque([init_codechef, init_atcoder, init_toph, init_lightoj, init_cod
 model_array=[codechef,atcoder, toph,lightoj,codeforces]
 
 
-def get_info(student_id: int, Update_now=True):
+def get_info(student_id, Update_now=True):
     init_array.rotate(1)
     # model_array.rotate(1)
     # names.rotate(1)
@@ -224,7 +224,7 @@ def get_info(student_id: int, Update_now=True):
                 pass
             i_name += 1
 
-
+    print('finished sceduler',ojdata)
     return ojdata
 
 

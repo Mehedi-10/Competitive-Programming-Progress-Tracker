@@ -31,8 +31,8 @@ def home(request):
         all['unirank'] = str(all['unirank'][0]).split(' ')
         contest_date = list(fun().values())[0][0]
     except:
-        contest_date={'date': 'Unknown', 'event': 'No Contest'}
-    upcoming=(contest_date['event'],str(contest_date['date'])+", "+calendar.month_name[now.month]+' '+str(now.year))
+        contest_date={'date': 'Unknown', 'event': 'No Contest', 'link':'#'}
+    upcoming=(contest_date['event'],str(contest_date['date'])+", "+calendar.month_name[now.month]+' '+str(now.year),contest_date['link'])
 
 
     return render(request,'home.html',{'all_data':all,'uni_rank':all['unirank'],'upcoming':upcoming,'contestant':[dept_contestent_cnt]})

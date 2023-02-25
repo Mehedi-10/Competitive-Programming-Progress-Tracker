@@ -75,7 +75,7 @@ def get_class(key):
     except:
         pass
     try:
-        if key[-1] - key[-2] >= 0:
+        if int(key[-1][0]) - int(key[-2][0]) >= 0:
             return 'fa-arrow-up text-green-500'
         else:
             return 'fa-arrow-down text-orange-500'
@@ -86,9 +86,15 @@ def get_class(key):
 @register.filter()
 def rating_delta(key):
     try:
-        return key[-1] - key[-2]
+        x=int(key[-1][0]) - int(key[-2][0])
+        if x<0:
+            return str(x)
+        elif x!=0:
+            return '+'+str(x)
+        else:
+            return '0'
     except:
-        return 0
+        return '0'
 
 
 @register.filter()
@@ -203,4 +209,5 @@ def get_solved_weekly(data):
             (datetime.datetime.strptime(today, '%Y/%m/%d'), min(day_solved[i][1] - day_solved[i + 1][1], 100)))
     new_day_solved=new_day_solved[0:7]
     new_day_solved.reverse()
+    print('day solved',new_day_solved)
     return new_day_solved

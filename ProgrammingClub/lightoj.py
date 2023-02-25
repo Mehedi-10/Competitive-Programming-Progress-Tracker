@@ -10,17 +10,36 @@ class LIGHTOJ:
             page = requests.get(url)
             self.soup=BeautifulSoup(page.content,"html.parser")
             self.dom= etree.HTML((str(self.soup)))
-            self.info = {
-                'contest_count': 0,
-                'submission_count': self.dom.xpath('/html/body/div[1]/div/div/section/div/div/div/div[2]/div[2]/div/div[2]/div[1]/div[2]/span[1]')[0].text,
-                'rating': 'unrated',
-                'highest_rating':'unrated',
-                'contribution': 'countless',
-                'rank': 'coming soon',
-                'last_solved': self.dom.xpath('//*[@id="pages-community"]/div[2]/div[2]/div/div[1]/div[2]/div/div/div[1]/span[2]/h4/span')[0].text,
-                'solved': self.dom.xpath('/html/body/div[1]/div/div/section/div/div/div/div[2]/div[2]/div/div[2]/div[1]/div[1]/span[1]')[0].text
-            }
-            print('lightoj done')
-            self.status=True
         except:
             self.status = False
+            return
+        self.info = {
+        'contest_count': '0',
+        'rating': 'Unrated',
+        'highest_rating': 'Unrated',
+        'rank': '0',
+        'solved':'0'
+    }
+        try:
+            self.info['contest_count']='0'
+        except:
+            pass
+        try:
+            self.info['rating']='Unrated'
+        except:
+            pass
+        try:
+            self.info['highest_rating']='Unrated'
+        except:
+            pass
+        try:
+            self.info['rank']='0'
+        except:
+            pass
+        try:
+            self.info['solved']=self.dom.xpath('/html/body/div[1]/div/div/section/div/div/div/div[2]/div[2]/div/div[2]/div[1]/div[1]/span[1]')[0].text
+        except:
+            pass
+        self.status = True
+
+

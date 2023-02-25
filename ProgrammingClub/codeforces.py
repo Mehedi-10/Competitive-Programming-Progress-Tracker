@@ -47,21 +47,38 @@ class CODEFORCES:
             page = requests.get(url)
             self.soup=BeautifulSoup(page.content,"html.parser")
             self.dom= etree.HTML((str(self.soup)))
-
-            self.info = {
-                'contest_count': self.dom.xpath('//*[@id="pageContent"]/div[4]/div[6]/table/tbody/tr[1]/td[1]')[0].text,
-                'submission_count':'countless',
-                'rating': str(rating),
-                'highest_rating': str(highest_rating),
-                'contribution': str(contribution),
-                'rank': str(rank),
-                'max rank':str(max_rank),
-                'solved': str(solved)
-            }
-            self.status=True
-        except Exception as e:
-            print(e)
+        except:
             self.status = False
+            return
+        self.info = {
+            'contest_count': '0',
+            'rating': 'Unrated',
+            'highest_rating': 'Unrated',
+            'rank': '0',
+            'solved': '0'
+        }
+        try:
+            self.info['contest_count'] = self.dom.xpath('//*[@id="pageContent"]/div[4]/div[6]/table/tbody/tr[1]/td[1]')[0].text
+        except:
+            pass
+        try:
+            self.info['rating'] = str(rating)
+        except:
+            pass
+        try:
+            self.info['highest_rating'] = str(highest_rating)
+        except:
+            pass
+        try:
+            self.info['rank'] = str(rank)
+        except:
+            pass
+        try:
+            self.info['solved'] = str(solved)
+        except:
+            pass
+        self.status = True
+
 if __name__ == '__main__':
     us=CODEFORCES('m-e-h-e-d-i')
     print(us.status)
