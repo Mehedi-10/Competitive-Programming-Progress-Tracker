@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7a5b84af-18ca-4c2f-90e4-2be90cfb894a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/codechef.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/codechef.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/get_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/get_info.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgrammingClub/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,7 +288,8 @@
       <workItem from="1677251805516" duration="13000" />
       <workItem from="1677256735119" duration="3500000" />
       <workItem from="1677260654483" duration="589000" />
-      <workItem from="1677299720920" duration="5246000" />
+      <workItem from="1677299720920" duration="5290000" />
+      <workItem from="1677350673188" duration="664000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1675375127621</created>
@@ -461,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677261141214</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="deploy done-6">
+      <created>1677306165287</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1677306165287</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +503,8 @@
     <MESSAGE value="deploy done-3" />
     <MESSAGE value="deploy done-4" />
     <MESSAGE value="deploy done-5" />
-    <option name="LAST_COMMIT_MESSAGE" value="deploy done-5" />
+    <MESSAGE value="deploy done-6" />
+    <option name="LAST_COMMIT_MESSAGE" value="deploy done-6" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/profileanalyser$tests.coverage" NAME="tests Coverage Results" MODIFIED="1677163006241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />

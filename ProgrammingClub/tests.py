@@ -9,6 +9,7 @@ def schedule():
         get_info(i.sid)
 
 def start():
+    schedule()
     sched=BackgroundScheduler()
     sched.add_job(schedule,'interval',seconds=1800)
     sched.start()
