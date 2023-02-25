@@ -29,3 +29,5 @@ class CODECHEF:
             self.status=True
         except:
             self.status = False
+if __name__ == '__main__':
+    pass

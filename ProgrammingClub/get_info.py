@@ -26,16 +26,15 @@ def time_delta(s):
     t22 = t2[0:19].replace('-', '/')
     delta = datetime.strptime(t22, '%Y/%m/%d %H:%M:%S') - datetime.strptime(t11, '%Y/%m/%d %H:%M:%S')
 
-    return delta.total_seconds() < (86400 // 2)
+    return delta.total_seconds() < (86400 // 12)
 
-def time_difference_calc(s):
+def date_not_same(s):
     t1 = str(s)
-    t11 = t1[0:19].replace('-', '/')
+    t11 = t1[0:10].replace('-', '/')
     t2 = str(datetime.now())
-    t22 = t2[0:19].replace('-', '/')
-    delta = datetime.strptime(t22, '%Y/%m/%d %H:%M:%S') - datetime.strptime(t11, '%Y/%m/%d %H:%M:%S')
+    t22 = t2[0:10].replace('-', '/')
+    return datetime.strptime(t22, '%Y/%m/%d') != datetime.strptime(t11, '%Y/%m/%d')
 
-    return delta.total_seconds()
 
 
 
@@ -280,7 +279,8 @@ def get_rating():
                 )
                 ob.save()
             else:
-                if time_difference_calc(resent_datas.objects.filter(sid=key).order_by('date').last().date)>=86400:
+                if date_not_same(resent_datas.objects.filter(sid=key).order_by('date').last().date):
+                    # print('creating new recent')
                     ob = resent_datas(
                         sid_id=key,
                         solved=str(total_solved),
@@ -288,6 +288,15 @@ def get_rating():
                         date=datetime.now().__str__()
                     )
                     ob.save()
+                else:
+                    # print('altering data')
+                    ob=resent_datas.objects.filter(sid=key).order_by('date').last()
+                    # print(ob.rating,rating)
+                    # print(ob.solved,total_solved)
+                    ob.rating=str(rating)
+                    ob.solved=str(total_solved)
+                    ob.save()
+
             rating_set = []
             solved_set = []
             for i in resent_datas.objects.filter(sid=key).order_by('date'):
@@ -309,7 +318,7 @@ def get_rating():
         weekly.sort(key=lambda x: x[1], reverse=True)
     except:
         pass
-    # print('hi',dic)
-    # print('hello',all_dic)
-    # print('hp', weekly)
+    # print('dept',dic)
+    # print('all uni',all_dic)
+    # print('weekly', weekly)
     return (dic, all_dic, weekly)

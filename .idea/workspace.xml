@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7a5b84af-18ca-4c2f-90e4-2be90cfb894a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgrammingClub/codechef.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/codechef.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgrammingClub/get_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/get_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgrammingClub/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +290,8 @@
       <workItem from="1677243163954" duration="8359000" />
       <workItem from="1677251805516" duration="13000" />
       <workItem from="1677256735119" duration="3500000" />
-      <workItem from="1677260654483" duration="481000" />
+      <workItem from="1677260654483" duration="589000" />
+      <workItem from="1677299720920" duration="5246000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1675375127621</created>
@@ -450,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677260203258</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="deploy done-5">
+      <created>1677261141214</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1677261141214</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,8 +504,8 @@
     <SUITE FILE_PATH="coverage/profileanalyser$tests.coverage" NAME="tests Coverage Results" MODIFIED="1677163006241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
     <SUITE FILE_PATH="coverage/profileanalyser$national_contests.coverage" NAME="national_contests Coverage Results" MODIFIED="1676528335885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
     <SUITE FILE_PATH="coverage/profileanalyser$views.coverage" NAME="views Coverage Results" MODIFIED="1677096626504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
-    <SUITE FILE_PATH="coverage/profileanalyser$codechef.coverage" NAME="codechef Coverage Results" MODIFIED="1675233197799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profileanalyser" />
     <SUITE FILE_PATH="coverage/profileanalyser$atcoder.coverage" NAME="atcoder Coverage Results" MODIFIED="1675453474976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
+    <SUITE FILE_PATH="coverage/profileanalyser$codechef.coverage" NAME="codechef Coverage Results" MODIFIED="1677305032562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
     <SUITE FILE_PATH="coverage/profileanalyser$codeforces.coverage" NAME="codeforces Coverage Results" MODIFIED="1675433002752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
     <SUITE FILE_PATH="coverage/profileanalyser$scheduled_task.coverage" NAME="scheduled_task Coverage Results" MODIFIED="1675176222212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profileanalyser" />
     <SUITE FILE_PATH="coverage/profileanalyser$lightoj.coverage" NAME="lightoj Coverage Results" MODIFIED="1675425815782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
