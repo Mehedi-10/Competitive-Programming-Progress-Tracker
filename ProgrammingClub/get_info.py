@@ -1,5 +1,4 @@
 import math
-import random
 import time
 from datetime import datetime
 from .toph import TOPH as tp
@@ -26,7 +25,7 @@ def time_delta(s):
     t22 = t2[0:19].replace('-', '/')
     delta = datetime.strptime(t22, '%Y/%m/%d %H:%M:%S') - datetime.strptime(t11, '%Y/%m/%d %H:%M:%S')
 
-    return delta.total_seconds() < (86400 // 12)
+    return delta.total_seconds() < 3600
 
 def date_not_same(s):
     t1 = str(s)
@@ -46,7 +45,7 @@ def init_atcoder(ob: contestant):
             ob = atcoder.objects.get(sid=ob.sid)
             if not time_delta(ob):
                 cntstnt = ac(handle)
-                if cntstnt.status:
+                if cntstnt.status and stodic(ob.info)['solved']<=stodic(cntstnt.info.__str__())['solved']:
                     ob.info = cntstnt.info.__str__()
                     ob.last_update_time = datetime.now().__str__()
                     ob.save()
@@ -76,7 +75,7 @@ def init_codeforces(ob: contestant):
             ob = codeforces.objects.get(sid=ob.sid)
             if not time_delta(ob):
                 cntstnt = cf(handle)
-                if cntstnt.status:
+                if cntstnt.status and stodic(ob.info)['solved']<=stodic(cntstnt.info.__str__())['solved']:
                     ob.info = cntstnt.info.__str__()
                     ob.last_update_time = datetime.now().__str__()
                     ob.save()
@@ -108,7 +107,7 @@ def init_toph(ob: contestant):
             if not time_delta(ob):
                 cntstnt = tp(handle)
                 print(cntstnt.status)
-                if cntstnt.status:
+                if cntstnt.status and stodic(ob.info)['solved']<=stodic(cntstnt.info.__str__())['solved']:
                     ob.info = cntstnt.info.__str__()
                     ob.last_update_time = datetime.now().__str__()
                     ob.save()
@@ -139,7 +138,7 @@ def init_lightoj(ob: contestant):
             ob = lightoj.objects.get(sid=ob.sid)
             if not time_delta(ob):
                 cntstnt = loj(handle)
-                if cntstnt.status:
+                if cntstnt.status and stodic(ob.info)['solved']<=stodic(cntstnt.info.__str__())['solved']:
                     ob.info = cntstnt.info.__str__()
                     ob.last_update_time = datetime.now().__str__()
                     ob.save()
@@ -170,7 +169,7 @@ def init_codechef(ob: contestant):
             ob = codechef.objects.get(sid=ob.sid)
             if not time_delta(ob):
                 cntstnt = cc(handle)
-                if cntstnt.status:
+                if cntstnt.status and stodic(ob.info)['solved']<=stodic(cntstnt.info.__str__())['solved']:
                     ob.info = cntstnt.info.__str__()
                     ob.last_update_time = datetime.now().__str__()
                     ob.save()
@@ -268,7 +267,7 @@ def get_rating():
                 calc_ok = False
                 print("error getting rating")
         if calc_ok:
-            rating /= 6
+            rating /= 5
             rating = math.ceil(rating)
             if not resent_datas.objects.filter(sid=key).exists():
                 ob = resent_datas(
