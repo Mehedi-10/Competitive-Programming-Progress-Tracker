@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a5b84af-18ca-4c2f-90e4-2be90cfb894a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/static/3235244.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/5634750.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgrammingClub/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgrammingClub/get_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/get_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgrammingClub/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/calender.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/calender.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contestants.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contestants.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teamlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teamlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/teams.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teams.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,35 +174,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/6th sem project/profileanalyser/ProgrammingClub&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/6th sem project/profileanalyser/static",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\6th sem project\profileanalyser\ProgrammingClub" />
       <recent name="D:\6th sem project\profileanalyser\static" />
+      <recent name="D:\6th sem project\profileanalyser\ProgrammingClub" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\6th sem project\profileanalyser\static" />
       <recent name="D:\6th sem project\profileanalyser\ProgrammingClub" />
       <recent name="D:\6th sem project\profileanalyser\profileanalyser\templatetags" />
       <recent name="D:\6th sem project\profileanalyser" />
@@ -289,7 +300,24 @@
       <workItem from="1677256735119" duration="3500000" />
       <workItem from="1677260654483" duration="589000" />
       <workItem from="1677299720920" duration="5290000" />
-      <workItem from="1677350673188" duration="664000" />
+      <workItem from="1677350673188" duration="9968000" />
+      <workItem from="1677426361639" duration="715000" />
+      <workItem from="1677487618235" duration="3000" />
+      <workItem from="1677520551038" duration="1288000" />
+      <workItem from="1677606511486" duration="608000" />
+      <workItem from="1677688253342" duration="647000" />
+      <workItem from="1677691690235" duration="250000" />
+      <workItem from="1677780399391" duration="329000" />
+      <workItem from="1677869461093" duration="338000" />
+      <workItem from="1677950756568" duration="526000" />
+      <workItem from="1678106234870" duration="4640000" />
+      <workItem from="1678111913471" duration="764000" />
+      <workItem from="1678173750356" duration="228000" />
+      <workItem from="1678194118393" duration="614000" />
+      <workItem from="1678303686590" duration="2919000" />
+      <workItem from="1678331405887" duration="2315000" />
+      <workItem from="1678359553119" duration="638000" />
+      <workItem from="1678376742284" duration="12120000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1675375127621</created>
@@ -466,7 +494,35 @@
       <option name="project" value="LOCAL" />
       <updated>1677306165287</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="deploy done-7">
+      <created>1677351346231</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1677351346231</updated>
+    </task>
+    <task id="LOCAL-00027" summary="deploy done-8">
+      <created>1677360305658</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1677360305658</updated>
+    </task>
+    <task id="LOCAL-00028" summary="deploy done-9">
+      <created>1678112593899</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1678112593899</updated>
+    </task>
+    <task id="LOCAL-00029" summary="deploy done-9">
+      <created>1678112653477</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1678112653477</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,18 +560,21 @@
     <MESSAGE value="deploy done-4" />
     <MESSAGE value="deploy done-5" />
     <MESSAGE value="deploy done-6" />
-    <option name="LAST_COMMIT_MESSAGE" value="deploy done-6" />
+    <MESSAGE value="deploy done-7" />
+    <MESSAGE value="deploy done-8" />
+    <MESSAGE value="deploy done-9" />
+    <option name="LAST_COMMIT_MESSAGE" value="deploy done-9" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/profileanalyser$tests.coverage" NAME="tests Coverage Results" MODIFIED="1677163006241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
+    <SUITE FILE_PATH="coverage/profileanalyser$tests.coverage" NAME="tests Coverage Results" MODIFIED="1677357621753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
     <SUITE FILE_PATH="coverage/profileanalyser$national_contests.coverage" NAME="national_contests Coverage Results" MODIFIED="1676528335885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
     <SUITE FILE_PATH="coverage/profileanalyser$views.coverage" NAME="views Coverage Results" MODIFIED="1677096626504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
     <SUITE FILE_PATH="coverage/profileanalyser$atcoder.coverage" NAME="atcoder Coverage Results" MODIFIED="1675453474976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
-    <SUITE FILE_PATH="coverage/profileanalyser$codechef.coverage" NAME="codechef Coverage Results" MODIFIED="1677305032562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
-    <SUITE FILE_PATH="coverage/profileanalyser$codeforces.coverage" NAME="codeforces Coverage Results" MODIFIED="1675433002752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
+    <SUITE FILE_PATH="coverage/profileanalyser$codechef.coverage" NAME="codechef Coverage Results" MODIFIED="1677357450008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
+    <SUITE FILE_PATH="coverage/profileanalyser$codeforces.coverage" NAME="codeforces Coverage Results" MODIFIED="1677520870219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
     <SUITE FILE_PATH="coverage/profileanalyser$scheduled_task.coverage" NAME="scheduled_task Coverage Results" MODIFIED="1675176222212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profileanalyser" />
-    <SUITE FILE_PATH="coverage/profileanalyser$lightoj.coverage" NAME="lightoj Coverage Results" MODIFIED="1675425815782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
-    <SUITE FILE_PATH="coverage/profileanalyser$toph.coverage" NAME="toph Coverage Results" MODIFIED="1675426070709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
+    <SUITE FILE_PATH="coverage/profileanalyser$lightoj.coverage" NAME="lightoj Coverage Results" MODIFIED="1677353799397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
+    <SUITE FILE_PATH="coverage/profileanalyser$toph.coverage" NAME="toph Coverage Results" MODIFIED="1677520639325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
     <SUITE FILE_PATH="coverage/profileanalyser$get_date.coverage" NAME="get_date Coverage Results" MODIFIED="1675364069842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profileanalyser" />
     <SUITE FILE_PATH="coverage/profileanalyser$filters.coverage" NAME="filters Coverage Results" MODIFIED="1675458831356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub/templatetags" />
     <SUITE FILE_PATH="coverage/profileanalyser$get_info.coverage" NAME="get_info Coverage Results" MODIFIED="1676390392156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />

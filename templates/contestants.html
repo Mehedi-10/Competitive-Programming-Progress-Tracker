@@ -6,13 +6,13 @@
 
 
 
-    <div class="flex flex-wrap justify-center text-center mb-10 mt-10">
+    <div class="flex flex-wrap justify-center  text-center mb-10 mt-10">
         <div class="w-full lg:w-6/12 px-4">
-            <h1 class="text-gray-900 text-4xl font-bold mb-8">
+            <h1 class="text-white text-4xl font-bold mb-8">
                 Meet Our Contestants
             </h1>
 
-            <p class="text-gray-700 text-lg font-light">
+            <p class="text-gray-100 text-lg font-light">
                 With over 10 years of cp journey, we've got many skilled contestants.
             </p>
         </div>
@@ -20,7 +20,7 @@
     {% for key,val in contestant.items %}
 
         <section
-                class="antialiased bg-gray-100 text-gray-600 h-screen w-full px-4 bg-gray-900 bg-opacity-80 top-0 fixed sticky-0"
+                class="antialiased bg-gray-100 text-gray-600 h-screen w-full px-4 bg-opacity-80 fixed top-0 sticky-0"
                 style="display: none; z-index: 9999"
                 id="section{{ key }}">
 
@@ -88,7 +88,7 @@
     {% endfor %}
 
 
-    <section class="py-10 bg-gray-100">
+    <section class="py-10 ">
         <div class="mx-auto grid max-w-6xl  grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {% for key in sorted_list %}
 

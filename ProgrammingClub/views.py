@@ -72,7 +72,8 @@ def teams(request,team_name):
         team_name=int(team_name)
         all_data = {
             'img':li,
-            'team': {team_name:team_data[team_name]}
+            'team': {team_name:team_data[team_name]},
+            'name':team_data[team_name]['name']
         }
     except:
         all_data={}

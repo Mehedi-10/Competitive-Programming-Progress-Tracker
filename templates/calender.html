@@ -4,19 +4,18 @@
 {% block content %}
     <div class="flex flex-wrap justify-center text-center mb-10 mt-10">
         <div class="w-full lg:w-6/12 px-4">
-            <h1 class="text-gray-900 text-2xl font-bold mb-3">
+            <h1 class="text-white text-2xl font-bold mb-3">
                 Upcoming Contests In This Month
             </h1>
 
         </div>
     </div>
-    <div class="bg-slate-100 p-2 ">
-
+    <div class="p-2 ">
         <div class="container mx-auto mt-1">
-
-            <div class="wrapper bg-white rounded shadow">
+            <div class="wrapper
+bg-slate-100 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60 border border-gray-100            rounded shadow">
                 <div class="header flex justify-between border-b p-2">
-        <span class="text-lg font-bold">{{ current_month }}</span>
+        <span class="text-lg font-bold p-2">{{ current_month }}</span>
 {#                    next month calculations#}
                     <div class="buttons" style="display: none">
                         <button class="p-1">
@@ -59,16 +58,16 @@
                     <tbody>
                     <tr class="text-center h-20">
                         {% for i in dat %}
-                            <td class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                            <td class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-slate-200">
                                 <div class="flex flex-col h-40 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
                                     <div class="top h-5 w-full">
-                                        <span class="text-gray-500">{{ i }}</span>
+                                        <span>{{ i }}</span>
                                     </div>
                                     <div class=" bottom flex-grow h-10 py-1 w-full cursor-pointer">
 
                                         {% if i in contest %}
                                             {% for j in contest|get_item:i %}
-                                                <div class="event bg-purple-400 text-white rounded p-1 mb-1"
+                                                <div class="event bg-indigo-500 text-white rounded p-1 mb-1"
                                                      style="font-size: 7.5px">
                                                     <a href="{{ j.link }}">
                                                         <span class="event-name">{{ j.event }}</span>
