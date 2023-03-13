@@ -34,8 +34,9 @@
 
 <body class="bg-slate-100 dark:bg-dark dark:text-light" style="font-family: 'IBM Plex Mono', monospace;
 
-background-image: linear-gradient(to top, #a48bfa, #9d81fb, #9678fc, #8f6efd, #8764fe, #7c5ef8, #7057f3, #6351ed, #504ddf, #3c48d2, #2643c4, #003eb6);
-"
+        background-image: url('{% static '96.-Lake.jpg' %}')
+
+        "
 
 >
 
@@ -45,7 +46,7 @@ background-image: linear-gradient(to top, #a48bfa, #9d81fb, #9678fc, #8f6efd, #8
         <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <button id="menu-btn" type="button"
-                        class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:bg-opacity-30 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:bg-opacity-30 hover:text-white focus:outline-none ">
 
                     <svg class="h-6 w-6" style="display: block" id="bars3" xmlns="http://www.w3.org/2000/svg"
                          fill="none" viewBox="0 0 24 24"
@@ -72,37 +73,39 @@ background-image: linear-gradient(to top, #a48bfa, #9d81fb, #9678fc, #8f6efd, #8
             </div>
 
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 ">
-{##}
-{#                <div class="flex items-center justify-center bg-gray hidden sm:ml-6 sm:block ">#}
-{#                    <form method="GET" class="m-0">#}
-{#                        <div class="relative text-gray-600 focus-within:text-gray-400">#}
-{#      <span class="absolute inset-y-0 left-0 flex items-center pl-2">#}
-{#        <button type="submit" class=" focus:outline-none focus:shadow-outline">#}
-{#          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"#}
-{#               viewBox="0 0 24 24" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>#}
-{#        </button>#}
-{#      </span>#}
-{#                            <input type="search" name="q"#}
-{#                                   class="py-2 text-sm text-white bg-gray-900 rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900"#}
-{#                                   placeholder="Search..." autocomplete="off">#}
-{#                        </div>#}
-{#                    </form>#}
-{#                </div>#}
-{##}
+
                 <div class="hidden sm:ml-6 sm:block">
                     <div class="flex space-x-4">
                         <a href="home.html"
-                           class="border-b-2 border-transparent text-gray-300 hover:border-white hover:text-white px-2 py-2 text-sm font-medium"
+                           class="border-b-2 border-transparent text-gray-800 hover:border-white hover:text-black px-2 py-2 text-sm font-medium"
                            aria-current="page"> Home </a>
 
                         <a href="teamlist.html"
-                           class="border-b-2 border-transparent text-gray-300 hover:border-white hover:text-white px-2 py-2 text-sm font-medium">Teams</a>
+                           class="border-b-2 border-transparent text-gray-800 hover:border-white hover:text-black px-2 py-2 text-sm font-medium">Teams</a>
 
                         <a href="contestants.html"
-                           class="border-b-2 border-transparent text-gray-300 hover:border-white hover:text-white px-2 py-2 text-sm font-medium">Contestants</a>
+                           class="border-b-2 border-transparent text-gray-800 hover:border-white hover:text-black px-2 py-2 text-sm font-medium">Contestants</a>
 
                         <a href="calender.html"
-                           class="border-b-2 border-transparent text-gray-300 hover:border-white  hover:text-white px-2 py-2 text-sm font-medium">Calendar</a>
+                           class="border-b-2 border-transparent text-gray-800 hover:border-white  hover:text-black px-2 py-2 text-sm font-medium">Calendar</a>
+
+                        <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+                            <button class="lg:ml-4 focus:outline-none  flex items-center justify-start lg:mb-0 mb-4 pointer-cursor"
+                               id="userdropdown">
+                                <img class="rounded-full w-10 h-10 border-2 border-transparent hover:border-pink-400 ignore-body-click"
+                                     src="{% static 'Studying.jpg' %}" alt="avatar">
+                            </button>
+                            <div id="usermenu"
+                                 class="absolute lg:mt-12 pt-1 z-40 left-0 lg:left-auto lg:right-0 lg:top-0 lg:w-auto w-full"
+                                 style="display: none">
+                                <div class="bg-white shadow-xl lg:px-8 px-6 lg:py-4 pb-4 pt-0 rounded lg:mr-3 rounded-t-none">
+                                    <a href="/settings"
+                                       class="pb-2 block text-gray-600 hover:text-gray-900 ignore-body-click">Settings</a>
+                                    <a href="/signout" class="block text-gray-600 hover:text-gray-900 ignore-body-click">Logout</a>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -115,16 +118,17 @@ background-image: linear-gradient(to top, #a48bfa, #9d81fb, #9678fc, #8f6efd, #8
 
         <div class="space-y-1 px-2 pt-2 pb-3">
             <a href="home.html"
-               class="text-gray-300 hover:bg-gray-100 hover:bg-opacity-30 hover:text-white block px-2 py-2 rounded-md text-base font-medium">Home</a>
+               class="text-gray-700 hover:bg-gray-100 hover:bg-opacity-30 hover:text-black block px-2 py-2 rounded-md text-base font-medium">Home</a>
 
             <a href="teamlist.html"
-               class="text-gray-300 hover:bg-gray-100 hover:bg-opacity-30 hover:text-white block px-2 py-2 rounded-md text-base font-medium">Teams</a>
+               class="text-gray-700 hover:bg-gray-100 hover:bg-opacity-30 hover:text-black block px-2 py-2 rounded-md text-base font-medium">Teams</a>
 
             <a href="contestants.html"
-               class="text-gray-300 hover:bg-gray-100 hover:bg-opacity-30 hover:text-white block px-2 py-2 rounded-md text-base font-medium">Contestants</a>
+               class="text-gray-700 hover:bg-gray-100 hover:bg-opacity-30 hover:text-black block px-2 py-2 rounded-md text-base font-medium">Contestants</a>
 
             <a href="calender.html"
-               class="text-gray-300 hover:bg-gray-100 hover:bg-opacity-30 hover:text-white block px-2 py-2 rounded-md text-base font-medium">Calendar</a>
+               class="text-gray-700 hover:bg-gray-100 hover:bg-opacity-30 hover:text-black block px-2 py-2 rounded-md text-base font-medium">Calendar</a>
+
         </div>
 
     </div>
@@ -136,7 +140,7 @@ background-image: linear-gradient(to top, #a48bfa, #9d81fb, #9678fc, #8f6efd, #8
 {% endblock %}
 
 
-<footer class="py-6 text-white">
+<footer class="py-6 mt-6 text-black">
     <div class="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
         <div class="grid justify-center  lg:justify-between">
             <div class="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
@@ -171,6 +175,10 @@ background-image: linear-gradient(to top, #a48bfa, #9d81fb, #9678fc, #8f6efd, #8
             $("#mobile-menu").toggle();
             $("#bars3").toggle();
             $("#xmarks").toggle();
+        });
+
+         $("#userdropdown").click(function () {
+            $("#usermenu").toggle();
         });
     });
 

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from ProgrammingClub.views import home,calender,contestant,teams,teamlist
+from ProgrammingClub.views import home,calender,contestant,teams,teamlist,signup,signin,signout,settings
 # from django.conf import settings
 # from django.conf.urls.static import static
 
@@ -27,5 +27,9 @@ urlpatterns = [
     path('contestants.html',contestant),
     re_path(r'^team@(?P<team_name>\d+)',teams),
     path('teamlist.html',teamlist),
+    path('signup',signup),
+    path('signin',signin),
+    path('settings',settings),
+    path('signout',signout)
 ]
               # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

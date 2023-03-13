@@ -1,6 +1,6 @@
 import random
 
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponseRedirect
 import calendar
 import datetime
 from .models import contestant as cnts_model
@@ -91,3 +91,18 @@ def teamlist(request):
         pass
 
     return render(request,'teamlist.html',{'all_data':all_data})
+
+
+def signup(request):
+    if request.method=='POST':
+        return HttpResponseRedirect('signin')
+    return render(request,'signup.html')
+def signin(request):
+    if request.method=='POST':
+        return HttpResponseRedirect('/')
+    return render(request,'signin.html')
+def settings(request):
+    return render(request,'settings.html')
+def signout(request):
+    request.session.clear()
+    return HttpResponseRedirect('signin')

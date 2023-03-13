@@ -9,6 +9,7 @@ class contestant(models.Model):
     cc_handle=models.CharField(max_length=100,null=True,default=None, blank=True)
     atcoder_handle=models.CharField(max_length=100,null=True,default=None, blank=True)
     loj_handle=models.CharField(max_length=100,null=True,default=None, blank=True)
+    user_email=models.EmailField(max_length=400,null=True,default=None,blank=True)
 
 class atcoder(models.Model):
     sid=models.ForeignKey(contestant,on_delete=models.CASCADE)

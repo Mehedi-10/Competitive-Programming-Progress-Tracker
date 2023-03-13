@@ -4,7 +4,7 @@
 {% block content %}
     <div class="flex flex-wrap justify-center text-center mb-10 mt-10">
         <div class="w-full lg:w-6/12 px-4">
-            <h1 class="text-white text-2xl font-bold mb-3">
+            <h1 class="text-black text-2xl font-bold mb-3">
                 Upcoming Contests In This Month
             </h1>
 
@@ -47,7 +47,7 @@ bg-slate-100 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opac
 
                     <tr>
                         {% for foo in day %}
-                            <th class="p-2 border-r h-10 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 xl:text-sm text-xs">
+                            <th class="p-2 border-r border-slate-300 h-10 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 xl:text-sm text-xs">
                                 <span class="xl:block lg:block md:block sm:block hidden">{{ foo }}</span>
                                 <span class="xl:hidden lg:hidden md:hidden sm:hidden block">{{ foo }}</span>
                             </th>
@@ -58,7 +58,7 @@ bg-slate-100 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opac
                     <tbody>
                     <tr class="text-center h-20">
                         {% for i in dat %}
-                            <td class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-slate-200">
+                            <td class="border border-slate-300 p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-violet-200">
                                 <div class="flex flex-col h-40 mx-auto xl:w-30 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
                                     <div class="top h-5 w-full">
                                         <span>{{ i }}</span>
@@ -67,7 +67,7 @@ bg-slate-100 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opac
 
                                         {% if i in contest %}
                                             {% for j in contest|get_item:i %}
-                                                <div class="event bg-indigo-500 text-white rounded p-1 mb-1"
+                                                <div class="event bg-violet-500 text-white rounded p-1 mb-1"
                                                      style="font-size: 7.5px">
                                                     <a href="{{ j.link }}">
                                                         <span class="event-name">{{ j.event }}</span>

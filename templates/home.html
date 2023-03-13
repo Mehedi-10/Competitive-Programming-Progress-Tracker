@@ -37,7 +37,7 @@
                             <h6 class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
                                 Upcoming Contest
                             </h6>
-                            <a href="{{ upcoming.2 }}">  <span class="text-xl font-semibold ">{{ upcoming.0 }}</span></a>
+                            <a href="{{ upcoming.2 }}"> <span class="text-xl font-semibold ">{{ upcoming.0 }}</span></a>
                             <span class="inline-block px-2 py-px ml-2 text-xs text-red-500 bg-red-100 rounded-md">
                       {{ upcoming.1 }}
                     </span>
@@ -99,7 +99,7 @@
                             <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Department
                                 Rank-list</h4>
                         </div>
-                         <div class="relative p-4 h-72">
+                        <div class="relative p-4 h-72">
 
                             <div class="block w-full overflow-x-auto">
                                 <table class="items-center bg-transparent w-full border-collapse ">
@@ -193,50 +193,50 @@
                     <div class="col-span-3 bg-white rounded-md dark:bg-darker xs:col-span-1">
                         <div class="p-4 border-b dark:border-primary">
                             <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Weekly Problem Solving Data
-                                </h4>
+                            </h4>
                         </div>
                         <canvas class="p-1" id="UsersWeeklyChart"></canvas>
                     </div>
 
                     <div class="col-span-2 bg-white rounded-md dark:bg-darker xs:col-span-1">
                         <div class="col-span-1 bg-white rounded-md dark:bg-darker ">
-                        <div class="flex items-center justify-between p-4 border-b dark:border-primary">
-                            <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Top Problem Solvers</h4>
-                        </div>
-                         <div class="relative p-3 h-72">
-
-                            <div class="block w-full sm:overflow-hide overflow-x-auto ">
-                                <table class="items-center bg-transparent w-full border-collapse  ">
-                                    <thead>
-                                    <tr>
-                                        <th class="px-5 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                            Name
-                                        </th>
-                                        <th class="px-5 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                            Total Solved
-                                        </th>
-                                    </tr>
-                                    </thead>
-
-                                    <tbody>
-                                    {% for i in all_data.weekly|slice:":5" %}
-                                        <tr>
-                                            <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                                                {{ i.0|get_name }}
-                                            </th>
-                                            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4  text-center">
-                                                {{ i.1 }}
-                                            </td>
-
-                                        </tr>
-                                    {% endfor %}
-                                    </tbody>
-
-                                </table>
+                            <div class="flex items-center justify-between p-4 border-b dark:border-primary">
+                                <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Top Problem Solvers</h4>
                             </div>
-                        </div>
+                            <div class="relative p-3 h-72">
 
-                    </div>
+                                <div class="block w-full sm:overflow-hide overflow-x-auto ">
+                                    <table class="items-center bg-transparent w-full border-collapse  ">
+                                        <thead>
+                                        <tr>
+                                            <th class="px-5 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                                Name
+                                            </th>
+                                            <th class="px-5 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                                Total Solved
+                                            </th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        {% for i in all_data.weekly|slice:":5" %}
+                                            <tr>
+                                                <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                                                    {{ i.0|get_name }}
+                                                </th>
+                                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4  text-center">
+                                                    {{ i.1 }}
+                                                </td>
+
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
@@ -272,54 +272,66 @@
         xValues.push('{{ all_data.dept.0.2|last|last|next_day|date:"M d" }}');
 
 
-        const mylines = new Chart(ctx,
-            {
-
-                type: 'line',
-                data: {
-                    labels: xValues,
-                    datasets: [
-                        {% for i in all_data.dept %}
-                            {
-                                label: '{{ i.0|get_name }}',
-                                data: [
-                                    {% for i in i.2|get_rating_fortnight %}
-                                        {{ i.1 }},
-                                    {% endfor %}
-
-                                ],
-                                backgroundColor: '{{ i.3 }}',
-                                borderColor: '{{ i.3 }}',
-                                fill: false,
-                                tension: 0.1
-                            },
+       const mylines = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: xValues,
+        datasets: [
+            {% for i in all_data.dept %}
+                {
+                    label: '{{ i.0|get_name }}',
+                    data: [
+                        {% for i in i.2|get_rating_fortnight %}
+                            {{ i.1 }},
                         {% endfor %}
-                    ]
+                    ],
+                    backgroundColor: '{{ i.3 }}',
+                    borderColor: '{{ i.3 }}',
+                    fill: false,
+                    tension: 0.1
                 },
-                options: {
-
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'right',
-                        },
-
-                        zoom: {
-                            zoom: {
-                                wheel: {
-                                    enabled: true,
-                                },
-                                pinch: {
-                                    enabled: true
-                                },
-                                mode: 'xy',
-                            }
-                        }
+            {% endfor %}
+        ]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'right',
+            },
+            zoom: {
+                zoom: {
+                    wheel: {
+                        enabled: true,
                     },
+                    pinch: {
+                        enabled: true
+                    },
+                    mode: 'x',
+                    rangeMin: {
+                        x: 0,
+                        y: 0
+                    },
+                    rangeMax: {
+                        x: 1000,
+                        y: 100
+                    }
+                }
+            }
+        },
+        onHover: function(evt, chartElement) {
+            var chart = this;
+            if (chartElement && chartElement.datasetIndex === null) {
+                chart.options.plugins.zoom.zoom.wheel.enabled = false;
+                chart.options.plugins.zoom.zoom.pinch.enabled = false;
+            } else {
+                chart.options.plugins.zoom.zoom.wheel.enabled = true;
+                chart.options.plugins.zoom.zoom.pinch.enabled = true;
+            }
+        }
+    }
+});
 
-
-                },
-            });
 
         function resetlines() {
             mylines.resetZoom();
