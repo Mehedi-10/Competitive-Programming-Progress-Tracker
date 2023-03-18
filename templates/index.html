@@ -28,7 +28,13 @@
           rel="stylesheet">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
-
+    {% if messages %}
+        {% for message in messages %}
+            <div class="text-center">
+                        <div id="hidein2sec" {% if message.tags %} class="{{ message.tags }}"{% endif %} >{{ message }}</div>
+            </div>
+        {% endfor %}
+    {% endif %}
 </head>
 {#style="background-image: url('{% static 'icpc_dhaka_1.jpg' %}') ;#}
 
@@ -66,9 +72,9 @@
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex flex-shrink-0 items-center">
                     <img class="block h-10 w-auto lg:hidden"
-                         src="{% static 'logo.png' %}" alt="CSE-Computer Club">
+                         src="{% static 'Color logo - no background.png' %}" alt="CSE-Computer Club">
                     <img class="hidden h-10 w-auto lg:block"
-                         src="{% static 'logo.png' %}" alt="CSE-Computer Club">
+                         src="{% static 'Color logo - no background.png' %}" alt="CSE-Computer Club">
                 </div>
             </div>
 
@@ -91,7 +97,7 @@
 
                         <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
                             <button class="lg:ml-4 focus:outline-none  flex items-center justify-start lg:mb-0 mb-4 pointer-cursor"
-                               id="userdropdown">
+                                    id="userdropdown">
                                 <img class="rounded-full w-10 h-10 border-2 border-transparent hover:border-pink-400 ignore-body-click"
                                      src="{% static 'Studying.jpg' %}" alt="avatar">
                             </button>
@@ -101,7 +107,8 @@
                                 <div class="bg-white shadow-xl lg:px-8 px-6 lg:py-4 pb-4 pt-0 rounded lg:mr-3 rounded-t-none">
                                     <a href="/settings"
                                        class="pb-2 block text-gray-600 hover:text-gray-900 ignore-body-click">Settings</a>
-                                    <a href="/signout" class="block text-gray-600 hover:text-gray-900 ignore-body-click">Logout</a>
+                                    <a href="/signout"
+                                       class="block text-gray-600 hover:text-gray-900 ignore-body-click">Logout</a>
                                 </div>
                             </div>
 
@@ -177,7 +184,7 @@
             $("#xmarks").toggle();
         });
 
-         $("#userdropdown").click(function () {
+        $("#userdropdown").click(function () {
             $("#usermenu").toggle();
         });
     });
@@ -192,6 +199,13 @@
             $("#mobile-menu").hide();
         }
     });
+
+    {% if messages %}
+        setTimeout(message, 3000);
+        function message() {
+            document.getElementById("hidein2sec").style.display = 'none';
+        }
+    {% endif %}
 
 </script>
 

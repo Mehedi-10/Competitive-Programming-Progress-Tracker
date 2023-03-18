@@ -10,7 +10,8 @@ class contestant(models.Model):
     atcoder_handle=models.CharField(max_length=100,null=True,default=None, blank=True)
     loj_handle=models.CharField(max_length=100,null=True,default=None, blank=True)
     user_email=models.EmailField(max_length=400,null=True,default=None,blank=True)
-
+    password=models.CharField(max_length=500,null=True,default=None,blank=True)
+    # user_image=models.ImageField(upload_to ='profile_pic/')
 class atcoder(models.Model):
     sid=models.ForeignKey(contestant,on_delete=models.CASCADE)
     info=models.CharField(max_length=10000,null=True,default=None, blank=True)
@@ -31,16 +32,21 @@ class lightoj(models.Model):
     sid=models.ForeignKey(contestant,on_delete=models.CASCADE)
     info=models.CharField(max_length=10000,null=True,default=None, blank=True)
     last_update_time=models.CharField(max_length=200,null=True,default=None, blank=True)
+class coach(models.Model):
+    coach_email=models.EmailField(max_length=400,null=True,default=None,blank=True)
+    password=models.CharField(max_length=500,null=True,default=None,blank=True)
 
 class teams(models.Model):
     member1=models.ForeignKey(contestant,on_delete=models.CASCADE,related_name='member1')
     member2=models.ForeignKey(contestant,on_delete=models.CASCADE,related_name='member2')
     member3=models.ForeignKey(contestant,on_delete=models.CASCADE,related_name='member3')
     team_name=models.CharField(max_length=100,null=True,default=None, blank=True)
+    coach=models.ForeignKey(coach,on_delete=models.SET_DEFAULT,related_name='coach',default=None,blank=True,null=True)
 
 class resent_datas(models.Model):
     sid=models.ForeignKey(contestant,on_delete=models.CASCADE)
     rating=models.CharField(max_length=10,null=True,blank=True)
     solved=models.CharField(max_length=10,null=True,blank=True)
     date=models.CharField(max_length=200,null=True,default=None, blank=True)
+
 

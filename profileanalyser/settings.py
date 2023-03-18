@@ -31,6 +31,16 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'bg-blue-500 text-white py-2 px-4 rounded',
+    messages.INFO: 'bg-yellow-500 text-white py-2 px-4 rounded',
+    messages.SUCCESS: 'bg-green-500 text-white py-2 px-4 rounded',
+    messages.WARNING: 'bg-rose-500 text-white py-2 px-4 rounded',
+    messages.ERROR: 'bg-red-500 text-white py-2 px-4 rounded',
+}
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

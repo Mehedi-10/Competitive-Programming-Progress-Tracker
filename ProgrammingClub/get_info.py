@@ -25,7 +25,7 @@ def time_delta(s):
     t22 = t2[0:19].replace('-', '/')
     delta = datetime.strptime(t22, '%Y/%m/%d %H:%M:%S') - datetime.strptime(t11, '%Y/%m/%d %H:%M:%S')
 
-    return delta.total_seconds() < 360000
+    return delta.total_seconds() < 6000
 
 def date_not_same(s):
     t1 = str(s)

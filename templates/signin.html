@@ -15,6 +15,13 @@
           rel="stylesheet">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="text-center">
+                        <div id="hidein2sec" {% if message.tags %} class="{{ message.tags }}"{% endif %} >{{ message }}</div>
+            </div>
+        {% endfor %}
+    {% endif %}
 </head>
 <body class="bg-slate-100 dark:bg-dark dark:text-light" style="font-family: 'IBM Plex Mono', monospace;
 
@@ -74,7 +81,7 @@
         {#        </div>#}
         {#      </div>#}
     </div>
-    <div class="bg-gray-100 rounded-b-lg py-6 px-4 lg:px-24">
+    <div class="bg-gray-100 rounded-b-lg py-6 px-4 lg:px-8">
         {#      <p class="text-center text-sm text-gray-500 font-light">#}
         {#        Or sign in with credentials#}
         {#      </p>#}
@@ -82,10 +89,10 @@
             {% csrf_token %}
             <div class="relative">
                 <input
-                        class="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
-                        id="username"
-                        type="text"
+                        class="invalid:border-red-500 valid:border-green-500 appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
+                        type="email"
                         placeholder="Email"
+                        name="email" required
                 />
                 <div class="absolute left-0 inset-y-0 flex items-center">
                     <svg
@@ -105,10 +112,11 @@
             </div>
             <div class="relative mt-3">
                 <input
-                        class="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
-                        id="username"
-                        type="text"
+                        class="invalid:border-red-500 valid:border-green-500 appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
+                        type="password"
                         placeholder="Password"
+                        name="password"
+                        required
                 />
                 <div class="absolute left-0 inset-y-0 flex items-center">
                     <svg
@@ -134,10 +142,21 @@
                 </button>
             </div>
             <div class="flex items-center justify-center mt-5">
-                <p class="text-center"> Don't have a account? <a href="signup" class="text-gray-900 font-semibold">SIGNUP</a></p>
+                <p class="text-center"> Don't have an account? <a href="signup" class="text-gray-900 font-semibold">SIGNUP</a>
+                </p>
             </div>
         </form>
     </div>
 </div>
+
+<script>
+
+     {% if messages %}
+        setTimeout(message, 3000);
+        function message() {
+            document.getElementById("hidein2sec").style.display = 'none';
+        }
+    {% endif %}
+</script>
 </body>
 </html>

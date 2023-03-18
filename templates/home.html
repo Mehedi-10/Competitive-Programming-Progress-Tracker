@@ -4,9 +4,17 @@
 {% load static %}
 {% block content %}
 
+    <div class="w-full md:w-6/12 px-4 m-12 mb-0">
+        <h1 class="text-black text-2xl font-bold mb-3">
+            Welcome to our platform
+        </h1>
+        <p class="text-lg font-light">
+            Our platform is dedicated to helping ICPC contestants and coaches excel by providing user-friendly
+            interface, data visualization tools, and progress tracking features.
+            We're excited to be a part of your journey towards success. </p>
+    </div>
 
-    <div class="flex  antialiased text-gray-900 p-5">
-
+    <div class="flex  antialiased text-gray-900 p-5 pt-2">
 
         <div class="flex-1  overflow-x-hidden overflow-y-auto bg-grey-800">
 
@@ -272,65 +280,65 @@
         xValues.push('{{ all_data.dept.0.2|last|last|next_day|date:"M d" }}');
 
 
-       const mylines = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: xValues,
-        datasets: [
-            {% for i in all_data.dept %}
-                {
-                    label: '{{ i.0|get_name }}',
-                    data: [
-                        {% for i in i.2|get_rating_fortnight %}
-                            {{ i.1 }},
-                        {% endfor %}
-                    ],
-                    backgroundColor: '{{ i.3 }}',
-                    borderColor: '{{ i.3 }}',
-                    fill: false,
-                    tension: 0.1
-                },
-            {% endfor %}
-        ]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'right',
+        const mylines = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: xValues,
+                datasets: [
+                    {% for i in all_data.dept %}
+                        {
+                            label: '{{ i.0|get_name }}',
+                            data: [
+                                {% for i in i.2|get_rating_fortnight %}
+                                    {{ i.1 }},
+                                {% endfor %}
+                            ],
+                            backgroundColor: '{{ i.3 }}',
+                            borderColor: '{{ i.3 }}',
+                            fill: false,
+                            tension: 0.1
+                        },
+                    {% endfor %}
+                ]
             },
-            zoom: {
-                zoom: {
-                    wheel: {
-                        enabled: true,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right',
                     },
-                    pinch: {
-                        enabled: true
-                    },
-                    mode: 'x',
-                    rangeMin: {
-                        x: 0,
-                        y: 0
-                    },
-                    rangeMax: {
-                        x: 1000,
-                        y: 100
+                    zoom: {
+                        zoom: {
+                            wheel: {
+                                enabled: true,
+                            },
+                            pinch: {
+                                enabled: true
+                            },
+                            mode: 'x',
+                            rangeMin: {
+                                x: 0,
+                                y: 0
+                            },
+                            rangeMax: {
+                                x: 1000,
+                                y: 100
+                            }
+                        }
+                    }
+                },
+                onHover: function (evt, chartElement) {
+                    var chart = this;
+                    if (chartElement && chartElement.datasetIndex === null) {
+                        chart.options.plugins.zoom.zoom.wheel.enabled = false;
+                        chart.options.plugins.zoom.zoom.pinch.enabled = false;
+                    } else {
+                        chart.options.plugins.zoom.zoom.wheel.enabled = true;
+                        chart.options.plugins.zoom.zoom.pinch.enabled = true;
                     }
                 }
             }
-        },
-        onHover: function(evt, chartElement) {
-            var chart = this;
-            if (chartElement && chartElement.datasetIndex === null) {
-                chart.options.plugins.zoom.zoom.wheel.enabled = false;
-                chart.options.plugins.zoom.zoom.pinch.enabled = false;
-            } else {
-                chart.options.plugins.zoom.zoom.wheel.enabled = true;
-                chart.options.plugins.zoom.zoom.pinch.enabled = true;
-            }
-        }
-    }
-});
+        });
 
 
         function resetlines() {

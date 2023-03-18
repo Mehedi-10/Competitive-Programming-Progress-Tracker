@@ -10,16 +10,15 @@ def synapse():
         rnk_list=[]
         for i in table.find_all('tr'):
             tmp=[]
-            first=True
             for j in i:
-                if j.text!='\n':
-                    if first:
-                        first=False
-                        continue
-                    tmp.append(j.text)
-            rnk_list.append(tmp)
+                txt=j.text.replace('\n','').strip()
+                if len(txt)>0:
+                    tmp.append(txt)
+            rnk_list.append(tmp[1:])
+
         indx=0
         for i in range(0,len(rnk_list)):
+            print(rnk_list[i])
             if rnk_list[i][1]=='Comilla University':
                 indx=i
         return rnk_list[indx]

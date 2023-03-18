@@ -28,46 +28,46 @@
                     <div class="py-8 px-16">
                         <label for="name" class="text-sm text-gray-600">Name</label>
                         <input class="mt-2 invalid:border-red-500 valid:border-green-500 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500"
-                               type="text" value="" name="name" required>
+                               type="text" value="{{ user_data.sname }}" name="sname" required>
                     </div>
                     <div class="py-8 px-16">
                         <label for="email" class="text-sm text-gray-600">Email Address</label>
                         <input class="mt-2 invalid:border-red-500 valid:border-green-500 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500"
-                               type="email" name="email" required >
+                               type="email" name="user_email" value="{{ user_data.user_email }}" required >
                     </div>
                     <div class="py-8 px-16">
                         <label for="name" class="text-sm text-gray-600">Student ID</label>
                         <input class="mt-2 invalid:border-red-500 valid:border-green-500 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500"
-                               type="number" value="" name="sid">
+                               type="number" value="{{ user_data.sid }}" name="sid">
                     </div>
                     <hr class="border-gray-200">
                     <div class="py-8 px-16">
                         <label for="name" class="text-sm text-gray-600">Codeforces Handle</label>
                         <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500"
-                               type="text" value="" name="cf_handle">
+                               type="text" value="{{ user_data.cf_handle }}" name="cf_handle">
                     </div>
 
                   <div class="py-8 px-16">
                         <label for="name" class="text-sm text-gray-600">CodeChef Handle</label>
                         <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500"
-                               type="text" value="" name="cc_handle">
+                               type="text" value="{{ user_data.cc_handle }}" name="cc_handle">
                     </div>
 
                   <div class="py-8 px-16">
                         <label for="name" class="text-sm text-gray-600">Toph Handle</label>
                         <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500"
-                               type="text" value="" name="toph_handle">
+                               type="text" value="{{ user_data.toph_handle }}" name="toph_handle">
                     </div>
 
                   <div class="py-8 px-16">
                         <label for="name" class="text-sm text-gray-600">Atcoder Handle</label>
                         <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500"
-                               type="text" value="" name="ac_handle">
+                               type="text" value="{{ user_data.atcoder_handle }}" name="atcoder_handle">
                     </div>
                     <div class="py-8 px-16">
                         <label for="name" class="text-sm text-gray-600">LightOJ Handle</label>
                         <input class="mt-2 border-2 border-gray-200 px-3 py-2 block w-full rounded-lg text-base text-gray-900 focus:outline-none focus:border-indigo-500"
-                               type="text" value="" name="loj_handle">
+                               type="text" value="{{ user_data.loj_handle }}" name="loj_handle">
                     </div>
 
                 </div>
