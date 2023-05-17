@@ -5,34 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a5b84af-18ca-4c2f-90e4-2be90cfb894a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ProgrammingClub/middlewares/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgrammingClub/middlewares/my_middleware.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgrammingClub/migrations/0006_coach_contestant_password.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgrammingClub/migrations/0007_teams_coach.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Color logo - no background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/672a9ace-5a75-44ff-82d8-b76ec9f632b7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/672a9ace-5a75-44ff-82d8-b76ec9f632b7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/get_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/get_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/national_contests.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/national_contests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgrammingClub/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profileanalyser/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/profileanalyser/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/5634750.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/code-forces.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/icpc_dhaka_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/icpc_dhaka_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/replaced.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contestants.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contestants.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teamlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teamlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teams.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teams.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,7 +304,11 @@
       <workItem from="1678820893383" duration="741000" />
       <workItem from="1678853377182" duration="426000" />
       <workItem from="1678859333071" duration="14000" />
-      <workItem from="1679130928543" duration="1835000" />
+      <workItem from="1679130928543" duration="2575000" />
+      <workItem from="1679133940243" duration="24000" />
+      <workItem from="1681629968787" duration="48000" />
+      <workItem from="1681717561961" duration="39000" />
+      <workItem from="1683649804781" duration="773000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1675375127621</created>
@@ -515,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678721803990</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="3 new pages added">
+      <created>1679133428452</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1679133428452</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
