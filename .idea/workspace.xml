@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a5b84af-18ca-4c2f-90e4-2be90cfb894a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/time_tracking.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgrammingClub/codeforces.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingClub/codeforces.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -198,7 +201,29 @@
       <recent name="D:\6th sem project\profileanalyser\profileanalyser" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django Server.profileanalyser">
+    <configuration name="codeforces" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="profileanalyser" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ProgrammingClub" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ProgrammingClub/codeforces.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="profileanalyser" type="Python.DjangoServer" factoryName="Django server">
       <module name="profileanalyser" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -224,6 +249,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.codeforces" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -309,6 +339,11 @@
       <workItem from="1681629968787" duration="48000" />
       <workItem from="1681717561961" duration="39000" />
       <workItem from="1683649804781" duration="773000" />
+      <workItem from="1684293158055" duration="1009000" />
+      <workItem from="1684294645566" duration="49000" />
+      <workItem from="1684302944055" duration="469000" />
+      <workItem from="1684303552791" duration="627000" />
+      <workItem from="1684640461919" duration="2774000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1675375127621</created>
@@ -499,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679133428452</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="migrations added">
+      <created>1684293484232</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1684293484232</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +580,8 @@
     <MESSAGE value="deploy done-5" />
     <MESSAGE value="deploy done-6" />
     <MESSAGE value="3 new pages added" />
-    <option name="LAST_COMMIT_MESSAGE" value="3 new pages added" />
+    <MESSAGE value="migrations added" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrations added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/profileanalyser$tests.coverage" NAME="tests Coverage Results" MODIFIED="1677357621753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
@@ -546,7 +589,7 @@
     <SUITE FILE_PATH="coverage/profileanalyser$views.coverage" NAME="views Coverage Results" MODIFIED="1677096626504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
     <SUITE FILE_PATH="coverage/profileanalyser$atcoder.coverage" NAME="atcoder Coverage Results" MODIFIED="1675453474976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
     <SUITE FILE_PATH="coverage/profileanalyser$codechef.coverage" NAME="codechef Coverage Results" MODIFIED="1677357450008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
-    <SUITE FILE_PATH="coverage/profileanalyser$codeforces.coverage" NAME="codeforces Coverage Results" MODIFIED="1677520870219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
+    <SUITE FILE_PATH="coverage/profileanalyser$codeforces.coverage" NAME="codeforces Coverage Results" MODIFIED="1684643487902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
     <SUITE FILE_PATH="coverage/profileanalyser$scheduled_task.coverage" NAME="scheduled_task Coverage Results" MODIFIED="1675176222212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profileanalyser" />
     <SUITE FILE_PATH="coverage/profileanalyser$lightoj.coverage" NAME="lightoj Coverage Results" MODIFIED="1677353799397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
     <SUITE FILE_PATH="coverage/profileanalyser$toph.coverage" NAME="toph Coverage Results" MODIFIED="1677520639325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProgrammingClub" />
