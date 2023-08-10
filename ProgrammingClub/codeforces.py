@@ -41,12 +41,15 @@ class CODEFORCES:
             page = requests.get(url)
             self.soup=BeautifulSoup(page.content,"html.parser")
             self.dom= etree.HTML((str(self.soup)))
-            solved=self.dom.xpath('//*[@id="pageContent"]/div[4]/div/div[7]/div[1]/div[1]/div[1]')[0].text
+            # // *[ @ id = "pageContent"] / div[4] / div / div[3] / div[1] / div[1] / div[1]
+            solved=self.dom.xpath('//*[@id="pageContent"]/div[4]/div/div[3]/div[1]/div[1]/div[1]')[0].text
             time.sleep(rest_time)
             url="https://codeforces.com/contests/with/"+handle
             page = requests.get(url)
             self.soup=BeautifulSoup(page.content,"html.parser")
             self.dom= etree.HTML((str(self.soup)))
+
+
         except:
             self.status = False
             return
@@ -57,6 +60,7 @@ class CODEFORCES:
             'rank': '0',
             'solved': '0'
         }
+
         try:
             self.info['contest_count'] = self.dom.xpath('//*[@id="pageContent"]/div[4]/div[6]/table/tbody/tr[1]/td[1]')[0].text
         except:
